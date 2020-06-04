@@ -1,0 +1,673 @@
+{
+  "id": "6e791ad5-9cc4-417f-b38a-4c24a08bd4e9",
+  "version": "2.0",
+  "name": "TesteLoginDevelV2Desktop",
+  "url": "http://52.212.215.104/iasi2",
+  "tests": [{
+    "id": "6f1a75d9-b92c-41c7-ba39-436b7d89a74a",
+    "name": "1. LIVE - Login cu user si pass valid",
+    "commands": [{
+      "id": "5c690717-878e-41c6-922c-008703eca71c",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104/iasi2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "453fa7f8-1f7c-4e7a-a71b-bb3446c69212",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca202fe7-68ce-48b5-860a-e20c09f6092c",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4768ea7e-d15b-494e-9644-2146f92b72a7",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.blue-gradient > div",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "91c2c381-e7b5-4568-b939-feaf340177f8",
+      "comment": "In campul Adresa de email introducem adresa userului",
+      "command": "type",
+      "target": "css=.form-row:nth-child(1) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='test@code932.com']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "andrei.rusu@icoldo.com"
+    }, {
+      "id": "288789c5-2f9c-4306-bb17-57935f5c0ef8",
+      "comment": "In campul parola introducem parola",
+      "command": "type",
+      "target": "css=.form-row:nth-child(2) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@value='testtest']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "1b49b5b0-0507-4b99-ba35-f7989066e25b",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.full-width > div",
+      "targets": [
+        ["css=.full-width > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/button/div", "xpath:idRelative"],
+        ["xpath=//form/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65ffc26d-19f3-4cd7-b342-65077117f26a",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cb35bdb8-8b6c-4052-bed5-7a9a8b687179",
+      "comment": "Verificam daca userul Rusu Andrei e logat cu succes",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[contains(.,'Rusu Andrei')]",
+      "targets": [
+        ["css=.customer-name", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Rusu Andrei')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "19cd4cfe-fb4b-4856-9fd6-1061ae707109",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1dfa06d6-e22b-4782-abb7-35aa5c5e3fae",
+      "comment": "Delogam clientul",
+      "command": "click",
+      "target": "linkText=Delogare",
+      "targets": [
+        ["linkText=Delogare", "linkText"],
+        ["css=.logout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Delogare')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delogare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b0708c7b-22fd-4e42-b212-689a667fbfb5",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "057064c4-87e6-4d96-9895-88886e0899ce",
+      "comment": "Verificam daca userul a fost delogat cu succes",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(.,'Autentifica-te')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "193f6346-b294-4f0a-b14f-777fef944b1c",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "ae243c6a-c2ca-4411-a7ba-826c286ea173",
+    "name": "2. LIVE - Login cu user valid si pass invalid",
+    "commands": [{
+      "id": "df39d4ac-c58c-49ad-b914-60324a00c1cc",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104/iasi2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "93c7b81f-a49c-4199-9be2-35510931753b",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc2c81b5-5479-4ecd-8056-2dbff159a7eb",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e07a6e4-f611-4ee5-a1a0-178166c99a68",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.blue-gradient > div",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5b4e32ab-e958-4bde-ad72-c90628923a91",
+      "comment": "In campul Adresa de email introducem adresa valida a userului",
+      "command": "type",
+      "target": "css=.form-row:nth-child(1) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='test@code932.com']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "andrei.rusu@icoldo.com"
+    }, {
+      "id": "ac972709-f7bf-4699-ac50-96e7583d564d",
+      "comment": "In campul parola introducem parola invalida",
+      "command": "type",
+      "target": "css=.form-row:nth-child(2) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@value='testtest']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "1234567"
+    }, {
+      "id": "2365d349-8cd6-491f-b108-aa9eeed8718c",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.full-width > div",
+      "targets": [
+        ["css=.full-width > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/button/div", "xpath:idRelative"],
+        ["xpath=//form/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ab0d3bf5-ff68-4de1-8d18-536aa6e7a80e",
+      "comment": "Verificam ca este afisat: \"Adresă de e-mail sau parolă incorectă. Te rugăm să reîncerci.\"",
+      "command": "assertText",
+      "target": "css=.error .info-box-content",
+      "targets": [
+        ["css=.error .info-box-content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Adresă de e-mail sau parolă incorectă. Te rugăm să reîncerci."
+    }, {
+      "id": "afa3a771-1a82-4c0f-87dd-0c95893d3c97",
+      "comment": "Inchidem modalul de Login",
+      "command": "click",
+      "target": "css=.close-modal",
+      "targets": [
+        ["css=.close-modal", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aca1d529-4fca-4a46-9d84-8d3dabfe6131",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "06d7b5e9-0bf5-4478-baea-12fb589de91d",
+      "comment": "Verificam ca userul nu a fost logat",
+      "command": "assertText",
+      "target": "css=.dropdown-section",
+      "targets": [
+        ["css=.dropdown-section", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div", "xpath:idRelative"],
+        ["xpath=//li[2]/div/div", "xpath:position"]
+      ],
+      "value": "Momentan, nu esti autentificat"
+    }, {
+      "id": "00d03863-b625-4719-8df8-95d2abc2c0e2",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "44788ed6-8836-4e94-870a-13c887edae54",
+    "name": "3. LIVE - Login cu user valid si fara pass",
+    "commands": [{
+      "id": "72d1ed48-c1cf-4845-bc60-74d77286602a",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104/iasi2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c7eed22-1d8a-4923-9d77-c222d1f2040c",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5feeb0e3-b460-4575-a6b7-8cad24e2b6c9",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61bf5ec4-1c22-4313-bec5-dac77adf9a6a",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.blue-gradient > div",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17a76144-9cea-44b5-a39c-8515ab3e9ccc",
+      "comment": "In campul Adresa de email introducem adresa userului",
+      "command": "type",
+      "target": "css=.form-row:nth-child(1) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='test@code932.com']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "andrei.rusu@icoldo.com"
+    }, {
+      "id": "489090a2-50e5-418a-9efe-6353f6438006",
+      "comment": "In campul parola nu introducem o parola",
+      "command": "type",
+      "target": "css=.form-row:nth-child(2) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@value='testtest']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e4d950c-dc8d-49f5-98cc-2e226ea1d659",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.full-width > div",
+      "targets": [
+        ["css=.full-width > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/button/div", "xpath:idRelative"],
+        ["xpath=//form/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "efe71ac7-b4e0-421e-ae56-2ccff0b6ff59",
+      "comment": "Verificam ca este afisat: \"Introduceti parola dumneavoastra\"",
+      "command": "assertText",
+      "target": "css=.error .info-box-content",
+      "targets": [
+        ["css=.error .info-box-content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Introduceti parola dumneavoastra"
+    }, {
+      "id": "059e82c3-d430-470e-bcab-bb97aac8188b",
+      "comment": "Inchidem modalul de Login",
+      "command": "click",
+      "target": "css=.close-modal",
+      "targets": [
+        ["css=.close-modal", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "28105874-735e-4a80-b541-708abbf5d977",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6fb71a1-d321-4701-a397-07dd6c120bc3",
+      "comment": "Verificam ca userul nu a fost logat",
+      "command": "assertText",
+      "target": "css=.dropdown-section",
+      "targets": [
+        ["css=.dropdown-section", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div", "xpath:idRelative"],
+        ["xpath=//li[2]/div/div", "xpath:position"]
+      ],
+      "value": "Momentan, nu esti autentificat"
+    }, {
+      "id": "c98acde4-7cb4-4ae4-8203-6799273a1a07",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "9d23104a-ccdd-4431-9886-18f6c54a4480",
+    "name": "4. LIVE - Login cu user invalid si pass valid",
+    "commands": [{
+      "id": "61aebe0f-c731-431f-981d-eaf48cdd56a2",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104/iasi2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cc2104c8-919c-4469-9c95-49c611a5d3f1",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cd733f46-3deb-454d-bd58-8e9baace144b",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b7a243e-961e-43a7-b209-1bd685cc9f05",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.blue-gradient > div",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c1a8a0f8-374e-4fa4-aafb-e152b7a84342",
+      "comment": "In campul Adresa de email introducem o adresa neinregistrata",
+      "command": "type",
+      "target": "css=.form-row:nth-child(1) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='test@code932.com']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "andrei.rusu@icoldo.ro"
+    }, {
+      "id": "a4e03f0a-6668-45da-9aed-dfed89f562a1",
+      "comment": "In campul parola introducem o parola valida",
+      "command": "type",
+      "target": "css=.form-row:nth-child(2) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@value='testtest']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "eaa5a0df-59b9-4220-98e2-5cc9e367394a",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.full-width > div",
+      "targets": [
+        ["css=.full-width > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/button/div", "xpath:idRelative"],
+        ["xpath=//form/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "678ad47d-25f7-47af-82a8-807f59c6822c",
+      "comment": "Verificam ca este afisat mesajul: Adresă de e-mail sau parolă incorectă. Te rugăm să reîncerci.",
+      "command": "assertText",
+      "target": "css=.error .info-box-content",
+      "targets": [
+        ["css=.error .info-box-content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//form/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "Adresă de e-mail sau parolă incorectă. Te rugăm să reîncerci."
+    }, {
+      "id": "e5f04087-79c3-45ab-a1d7-f8279dda3901",
+      "comment": "Inchidem modalul de Login",
+      "command": "click",
+      "target": "css=.close-modal",
+      "targets": [
+        ["css=.close-modal", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad354e7a-b317-4955-b181-fd1d6db07fc0",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "54d90d32-475b-4c79-9069-69ed4be68a81",
+      "comment": "Verificam ca userul nu a fost logat",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(.,'Autentifica-te')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9135849f-ce4f-4c11-a66a-c8e121c77759",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "5f5ce703-e427-473b-9d99-b4e4bec59a5f",
+    "name": "5. LIVE - Login cu user lasat gol si pass valid",
+    "commands": [{
+      "id": "80f37dff-592e-49a7-bba2-c501cf7bb05e",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104/iasi2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2d47d4cc-7b0e-4683-b1b1-66ea7cb8eb03",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ec28feb-e41a-4df3-9459-3618c4fa63da",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bcf4d75e-2db3-41c5-992b-5ff587c0a876",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.blue-gradient > div",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68c3d010-26a9-4267-a548-b6e8a2457012",
+      "comment": "In campul Adresa de email nu introducem emailul",
+      "command": "type",
+      "target": "css=.form-row:nth-child(1) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='test@code932.com']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0471140-fbe8-42e3-a440-15127914f58b",
+      "comment": "In campul parola introducem o parola valida",
+      "command": "type",
+      "target": "css=.form-row:nth-child(2) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@value='testtest']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "5dda2f6c-60a6-49b3-bd13-f57de0cb9200",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.full-width > div",
+      "targets": [
+        ["css=.full-width > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/button/div", "xpath:idRelative"],
+        ["xpath=//form/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8eefedf7-33e9-406d-aa23-486f51f27211",
+      "comment": "Verificam ca este afisat mesajul: Introduceti adresa dumneavoastra de email",
+      "command": "assertText",
+      "target": "css=.error .info-box-content",
+      "targets": [
+        ["css=.error .info-box-content", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/div/div", "xpath:idRelative"],
+        ["xpath=//form/div/div/div", "xpath:position"]
+      ],
+      "value": "Introduceti adresa dumneavoastra de email"
+    }, {
+      "id": "22ff62f7-dc99-4112-a4d8-4fd17ee430a6",
+      "comment": "Inchidem modalul de Login",
+      "command": "click",
+      "target": "css=.close-modal",
+      "targets": [
+        ["css=.close-modal", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/i", "xpath:idRelative"],
+        ["xpath=//div[3]/div/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e5fb530c-d6db-4740-add7-71b261ef2229",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "86202691-1735-4d13-8272-79dfa4af85a3",
+      "comment": "Verificam ca userul nu a fost logat",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(.,'Autentifica-te')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c43b679c-c21a-4509-a2db-1a1a92c2e516",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "bf4e454c-00c7-46c2-a036-05eca72f97fd",
+    "name": "1. Login Test Suite",
+    "persistSession": false,
+    "parallel": true,
+    "timeout": 30,
+    "tests": ["6f1a75d9-b92c-41c7-ba39-436b7d89a74a"]
+  }],
+  "urls": ["https://www.dedeman.ro/", "https://www.dedeman.ro/iasi3", "http://52.212.215.104/iasi2"],
+  "plugins": []
+}
