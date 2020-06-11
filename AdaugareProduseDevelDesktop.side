@@ -33,6 +33,13 @@
       ],
       "value": ""
     }, {
+      "id": "ddca02e2-bfcd-48c0-b8ec-65d20a919e98",
+      "comment": "Wait - Click pe Autentifica-te",
+      "command": "waitForElementVisible",
+      "target": "css=.blue-gradient > div",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "f152e747-43ec-4abb-8639-9ec3eaf07e9c",
       "comment": "Click pe Autentifica-te",
       "command": "click",
@@ -174,6 +181,18 @@
       ],
       "value": ""
     }, {
+      "id": "f41bb345-24db-4a64-b10a-018c07df409f",
+      "comment": "Wait - userul Rusu Andrei e logat cu succes",
+      "command": "waitForElementPresent",
+      "target": "xpath=//p[contains(.,'Rusu Andrei')]",
+      "targets": [
+        ["css=.customer-name", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Rusu Andrei')]", "xpath:innerText"]
+      ],
+      "value": "Rusu Andrei"
+    }, {
       "id": "cd45c8b2-daef-4fa6-a29a-7db77517e457",
       "comment": "Verificam daca userul Rusu Andrei e logat cu succes",
       "command": "assertElementPresent",
@@ -185,6 +204,13 @@
         ["xpath=//p[contains(.,'Rusu Andrei')]", "xpath:innerText"]
       ],
       "value": "Rusu Andrei"
+    }, {
+      "id": "0b24ea22-2dbb-4a6f-acc5-cf1cf3f4fdb3",
+      "comment": "Wait - Toate Departamentele",
+      "command": "waitForElementVisible",
+      "target": "css=.header-bottom_left > .semibold",
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "a97ad581-8d74-435a-9cb8-e071cb2cfafc",
       "comment": "Selectam Toate Departamentele",
@@ -222,6 +248,18 @@
       ],
       "value": ""
     }, {
+      "id": "67db9d62-50e8-4b81-b078-6074c1c47038",
+      "comment": "Wait - mai putine",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[contains(.,'- mai putine')]",
+      "targets": [
+        ["css=.toggle", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'- mai putine')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
       "id": "61040775-eb1f-4395-a8e7-ba43ed976302",
       "comment": "Selectam Mese",
       "command": "click",
@@ -235,6 +273,18 @@
         ["xpath=//a[contains(.,'Mese (225)')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "1af3de8a-4ae5-499c-9d4e-987d5cbb3dd2",
+      "comment": "Wait - Mese",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Mese')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Mese')]", "xpath:innerText"]
+      ],
+      "value": "30000"
     }, {
       "id": "cffcea06-847c-4e95-bb63-9b8246b82567",
       "comment": "Selectam Masute cafea",
@@ -250,6 +300,18 @@
       ],
       "value": ""
     }, {
+      "id": "9bf4cf12-52d5-4910-bd43-30d7d9595f14",
+      "comment": "Wait - Masute cafea",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Masute cafea')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Masute cafea')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
       "id": "5956e4c5-be84-4d20-966c-168edc5ca7fb",
       "comment": "Selectam sa fie disponibile Online",
       "command": "click",
@@ -264,17 +326,16 @@
       "value": ""
     }, {
       "id": "aeff418f-e8bd-4628-bc7a-a7a29933619c",
-      "comment": "Verificam ca e bifat - Online",
-      "command": "assertChecked",
-      "target": "id=filter-id-status-1",
+      "comment": "Wait - Online",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'Online (')]",
       "targets": [
-        ["id=filter-id-status-1", "id"],
-        ["css=#filter-id-status-1", "css:finder"],
-        ["xpath=//input[@id='filter-id-status-1']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
-        ["xpath=//span/input", "xpath:position"]
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Online (120)')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "30000"
     }, {
       "id": "7995c4d8-6660-48fe-9064-d6ce2d7f7cd8",
       "comment": "Selectam sa fie In magazinul fizic",
@@ -290,17 +351,16 @@
       "value": ""
     }, {
       "id": "045fa2a8-4c7f-4959-a353-f5622a51e367",
-      "comment": "Verificam ca e bifat - In magazinul fizic",
-      "command": "assertChecked",
-      "target": "id=filter-id-status-2",
+      "comment": "Wait - In magazinul fizic",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'2 filtre')]",
       "targets": [
-        ["id=filter-id-status-2", "id"],
-        ["css=#filter-id-status-2", "css:finder"],
-        ["xpath=//input[@id='filter-id-status-2']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]/a/div/span/input", "xpath:idRelative"],
-        ["xpath=//li[2]/a/div/span/input", "xpath:position"]
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2 filtre')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "30000"
     }, {
       "id": "402236da-3421-4fdf-acd4-edc0a565a2fe",
       "comment": "Selectam forma blat asimetrica",
@@ -316,17 +376,16 @@
       "value": ""
     }, {
       "id": "f5a6a734-4d2c-42a0-b900-88dceb3cb8a9",
-      "comment": "Verificam ca e bifat Forma blat - Asimetrica",
-      "command": "assertChecked",
-      "target": "id=filter-id-forma_blat_filtru-asimetrica",
+      "comment": "Wait - Forma blat - Asimetrica",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'asimetrica (')]",
       "targets": [
-        ["id=filter-id-forma_blat_filtru-asimetrica", "id"],
-        ["css=#filter-id-forma_blat_filtru-asimetrica", "css:finder"],
-        ["xpath=//input[@id='filter-id-forma_blat_filtru-asimetrica']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div[2]/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[2]/ul/li/a/div/span/input", "xpath:position"]
+        ["css=.inline-block:nth-child(2) > .wrap-fake-select span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'asimetrica (1)')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "30000"
     }, {
       "id": "0c73a3c7-576b-4dea-a3f2-c0bbe7f2d64a",
       "comment": "Verificam ca e afisat produsul - Masuta cafea din sticla MC-01",
@@ -559,11 +618,11 @@
       "id": "311cf77d-086a-496c-8053-f6f21d3fe3db",
       "comment": "Verificam ca adresa de livrare este bifata",
       "command": "assertChecked",
-      "target": "id=billing-address-1109200",
+      "target": "xpath=//input[@id='billing-address-1355']",
       "targets": [
-        ["id=billing-address-1109200", "id"],
-        ["css=#billing-address-1109200", "css:finder"],
-        ["xpath=//input[@id='billing-address-1109200']", "xpath:attributes"],
+        ["id=billing-address-1355", "id"],
+        ["css=#billing-address-1355", "css:finder"],
+        ["xpath=//input[@id='billing-address-1355']", "xpath:attributes"],
         ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/div/input", "xpath:idRelative"],
         ["xpath=//input", "xpath:position"]
       ],
@@ -902,6 +961,13 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "affa300f-c3dc-46e6-be38-5f2d30da5baf",
+      "comment": "Wait - Toate Departamentele",
+      "command": "waitForElementVisible",
+      "target": "css=.header-bottom_left > .semibold",
+      "targets": [],
+      "value": "30000"
+    }, {
       "id": "aa5af981-205c-43bc-b535-e4d9635ba137",
       "comment": "Selectam Toate Departamentele",
       "command": "click",
@@ -938,6 +1004,18 @@
       ],
       "value": ""
     }, {
+      "id": "b8180e32-5548-45f4-93ee-60a4d0373276",
+      "comment": "Wait - mai putine",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[contains(.,'- mai putine')]",
+      "targets": [
+        ["css=.toggle", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'- mai putine')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
       "id": "0e952305-4987-463d-a1e7-83d222741339",
       "comment": "Selectam Mese",
       "command": "click",
@@ -951,6 +1029,18 @@
         ["xpath=//a[contains(.,'Mese (225)')]", "xpath:innerText"]
       ],
       "value": ""
+    }, {
+      "id": "9e9e5bfd-d807-42d7-8afc-933b23cd17ab",
+      "comment": "Wait - Mese",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Mese')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Mese')]", "xpath:innerText"]
+      ],
+      "value": "30000"
     }, {
       "id": "c49d4a94-655f-4bbd-970d-2060d7ddeadc",
       "comment": "Selectam Masute cafea",
@@ -966,6 +1056,18 @@
       ],
       "value": ""
     }, {
+      "id": "9e132d1d-3844-4dd9-923d-5aec646ab20a",
+      "comment": "Wait - Masute cafea",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Masute cafea')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Masute cafea')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
       "id": "4c95cf58-3487-4459-b95e-1a39d118176a",
       "comment": "Selectam sa fie disponibile Online",
       "command": "click",
@@ -979,18 +1081,17 @@
       ],
       "value": ""
     }, {
-      "id": "7167351d-f73f-4587-95bc-589edc88478d",
-      "comment": "Verificam ca e bifat - Online",
-      "command": "assertChecked",
-      "target": "id=filter-id-status-1",
+      "id": "06641c06-0a84-41ac-82e1-ac7e76a70fb9",
+      "comment": "Wait - Online",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'Online (')]",
       "targets": [
-        ["id=filter-id-status-1", "id"],
-        ["css=#filter-id-status-1", "css:finder"],
-        ["xpath=//input[@id='filter-id-status-1']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
-        ["xpath=//span/input", "xpath:position"]
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Online (120)')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "30000"
     }, {
       "id": "afe46e63-7cd7-4f25-9f23-777b0daf23a9",
       "comment": "Selectam sa fie In magazinul fizic",
@@ -1005,18 +1106,17 @@
       ],
       "value": ""
     }, {
-      "id": "a3c387ee-07b6-4add-9011-b92acd755036",
-      "comment": "Verificam ca e bifat - In magazinul fizic",
-      "command": "assertChecked",
-      "target": "id=filter-id-status-2",
+      "id": "c8dbcc7b-37d4-4ce7-a4de-78c98c746e68",
+      "comment": "Wait - In magazinul fizic",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'2 filtre')]",
       "targets": [
-        ["id=filter-id-status-2", "id"],
-        ["css=#filter-id-status-2", "css:finder"],
-        ["xpath=//input[@id='filter-id-status-2']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]/a/div/span/input", "xpath:idRelative"],
-        ["xpath=//li[2]/a/div/span/input", "xpath:position"]
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2 filtre')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "30000"
     }, {
       "id": "3af4fae2-4c38-42cd-ba88-b7cde2cab2cf",
       "comment": "Selectam forma blat asimetrica",
@@ -1031,18 +1131,29 @@
       ],
       "value": ""
     }, {
-      "id": "fe136004-37c7-4572-80f8-9b8d9b143b67",
-      "comment": "Verificam ca e bifat Forma blat - Asimetrica",
-      "command": "assertChecked",
-      "target": "id=filter-id-forma_blat_filtru-asimetrica",
+      "id": "3674a305-94ad-4a8c-a94b-b1171b34d020",
+      "comment": "Wait - Forma blat - Asimetrica",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'asimetrica (')]",
       "targets": [
-        ["id=filter-id-forma_blat_filtru-asimetrica", "id"],
-        ["css=#filter-id-forma_blat_filtru-asimetrica", "css:finder"],
-        ["xpath=//input[@id='filter-id-forma_blat_filtru-asimetrica']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div[2]/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div[2]/ul/li/a/div/span/input", "xpath:position"]
+        ["css=.inline-block:nth-child(2) > .wrap-fake-select span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'asimetrica (1)')]", "xpath:innerText"]
       ],
-      "value": ""
+      "value": "30000"
+    }, {
+      "id": "571dab55-dd73-4b1c-98af-d415a14bb83d",
+      "comment": "Wait - e afisat produsul - Masuta cafea din sticla MC-01",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:innerText"]
+      ],
+      "value": "30000"
     }, {
       "id": "76c043c7-3d54-4134-bea2-aef37fb9d2ca",
       "comment": "Verificam ca e afisat produsul - Masuta cafea din sticla MC-01",
