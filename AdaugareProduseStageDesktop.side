@@ -5,7 +5,7 @@
   "url": "http://34.253.12.48",
   "tests": [{
     "id": "d23ba5af-6036-44d8-80e5-ee433375718f",
-    "name": "1. Client logat - Adaugare produs simplu in cos - Checkout",
+    "name": "1. Client logat - Produs Simplu - Ridicare din magazin - Card - Checkout",
     "commands": [{
       "id": "bdbc07b0-e14e-477a-9f3e-8c11f3a01350",
       "comment": "Deschidem pagina Dedeman Iasi",
@@ -427,11 +427,25 @@
       "value": ""
     }, {
       "id": "edf0f838-5552-4a7a-9861-b7b9800b5631",
-      "comment": "Stocam variabila pret - x",
+      "comment": "Stocam variabila pret - pret1",
       "command": "storeText",
-      "target": "css=.product-price > .bold:nth-child(1)",
+      "target": "css=.product-price",
       "targets": [],
-      "value": "x"
+      "value": "pret1"
+    }, {
+      "id": "f2740ded-61f1-4082-b237-846ed47a37db",
+      "comment": "Stocam variabila finala - pret",
+      "command": "executeScript",
+      "target": "return parseFloat(${pret1}.match(/[\\d\\.]+/))",
+      "targets": [],
+      "value": "pret"
+    }, {
+      "id": "b0f19911-a03c-4da5-b5da-72094ba5e734",
+      "comment": "Stocam variabila finala - pretLei",
+      "command": "store",
+      "target": "${pret} lei",
+      "targets": [],
+      "value": "pretLei"
     }, {
       "id": "94e3ab89-bc6e-4913-852c-ed7092a5f88a",
       "comment": "Verificam ca e Disponibil Online",
@@ -519,9 +533,9 @@
       "id": "34b9e91e-569b-490a-b77a-60126210ed60",
       "comment": "Verificam ca totalul cosului este acelasi",
       "command": "verifyText",
-      "target": "css=.product-price:nth-child(2) > .bold",
+      "target": "css=.product-price:nth-child(2)",
       "targets": [],
-      "value": "${x}"
+      "value": "${pretLei}"
     }, {
       "id": "f91eeef9-231d-449c-b167-46cb70c7237a",
       "comment": "Click pe Finalizeaza comanda",
@@ -591,14 +605,14 @@
       "command": "verifyText",
       "target": "xpath=//div/div[3]/div/span",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "d1dd3725-ab90-431a-bba3-9c85261c3c70",
       "comment": "Verificam Totalul sa fie acelasi",
       "command": "verifyText",
       "target": "css=.table-cell:nth-child(4) .bold",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "e08e1663-11c6-4b60-811a-5727a09b4f71",
       "comment": "Verificam ca Produsul e In stoc",
@@ -703,7 +717,7 @@
       "command": "verifyText",
       "target": "css=.grand-total > .pull-right",
       "targets": [],
-      "value": "${x}.99 lei"
+      "value": "${pretLei}"
     }, {
       "id": "78a9170c-dc89-4ff0-a641-19b607df3640",
       "comment": "Click pe Pasul urmator",
@@ -753,7 +767,7 @@
       "command": "verifyText",
       "target": "css=.semibold > .pull-right > .bold",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "d156dfe5-28ec-412a-a398-0121c4bc3aaf",
       "comment": "Bifam Ridicare din magazinul Dedeman Iasi",
@@ -774,7 +788,7 @@
       "command": "verifyText",
       "target": "css=.grand-total > .pull-right > .bold",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "f48a87da-c1fb-4cb2-bd6d-b567ca71882c",
       "comment": "Click pe Pasul urmator",
@@ -866,7 +880,7 @@
     }]
   }, {
     "id": "a05976a2-b3c3-483d-af65-3471fe63efed",
-    "name": "2. Client nelogat - Adaugare produs simplu in cos - Checkout",
+    "name": "2. Client nelogat - Produs Simplu - Ridicare din magazin - Card - Checkout",
     "commands": [{
       "id": "3077da19-8471-4b4a-965e-0d56643cd0ba",
       "comment": "Deschidem pagina Dedeman Iasi",
@@ -1191,11 +1205,25 @@
       "value": ""
     }, {
       "id": "edae228a-4896-41cd-9038-12c119620227",
-      "comment": "Stocam variabila pret",
+      "comment": "Stocam variabila pret - pret1",
       "command": "storeText",
-      "target": "css=.product-price > .bold:nth-child(1)",
+      "target": "css=.product-price",
       "targets": [],
-      "value": "x"
+      "value": "pret1"
+    }, {
+      "id": "48b54501-e05f-40e9-8a7d-c9d6a01399ed",
+      "comment": "Stocam variabila finala - pret",
+      "command": "executeScript",
+      "target": "return parseFloat(${pret1}.match(/[\\d\\.]+/))",
+      "targets": [],
+      "value": "pret"
+    }, {
+      "id": "7f0bdaa4-471a-43a9-a04d-3c44dc35b568",
+      "comment": "Stocam variabila finala - pretLei",
+      "command": "store",
+      "target": "${pret} lei",
+      "targets": [],
+      "value": "pretLei"
     }, {
       "id": "8b5fe2da-eaa3-416b-b285-d96ff957ca1a",
       "comment": "Verificam ca e Disponibil Online",
@@ -1283,9 +1311,9 @@
       "id": "5823b5be-1414-4f7c-bb99-b09577f57d6a",
       "comment": "Verificam ca totalul cosului este acelasi",
       "command": "verifyText",
-      "target": "css=.product-price:nth-child(2) > .bold",
+      "target": "css=.product-price:nth-child(2)",
       "targets": [],
-      "value": "${x}"
+      "value": "${pretLei}"
     }, {
       "id": "03b05055-db11-41c6-9b6d-6944dba4a11b",
       "comment": "Click pe Finalizeaza comanda",
@@ -1360,7 +1388,7 @@
         ["xpath=//div/div[3]/div/span", "xpath:position"],
         ["xpath=//span[contains(.,'281.64')]", "xpath:innerText"]
       ],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "5843344e-915f-46b4-bdf7-477e42e762c1",
       "comment": "Verificam Totalul sa fie acelasi",
@@ -1371,7 +1399,7 @@
         ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[4]/div/span", "xpath:idRelative"],
         ["xpath=//div/div[4]/div/span", "xpath:position"]
       ],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "50e57d09-0a51-4566-bb27-a47a10477f92",
       "comment": "Verificam ca Produsul e In stoc",
@@ -1693,7 +1721,7 @@
       "command": "verifyText",
       "target": "css=.grand-total > .pull-right > .bold",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "474ef802-6e83-4247-ae19-73c5564fe90f",
       "comment": "Click pe Pasul urmator",
@@ -1748,7 +1776,7 @@
       "command": "verifyText",
       "target": "css=.semibold > .pull-right > .bold",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "292da1f3-e1ce-4e0b-bc6b-af5493c6a906",
       "comment": "Bifam Ridicare din magazinul Dedeman Iasi",
@@ -1769,7 +1797,7 @@
       "command": "verifyText",
       "target": "css=.grand-total > .pull-right > .bold",
       "targets": [],
-      "value": "${x}.99"
+      "value": "${pret}"
     }, {
       "id": "eb34f2ea-447f-4a6d-b082-c7fd67222c79",
       "comment": "Click pe Pasul urmator",
