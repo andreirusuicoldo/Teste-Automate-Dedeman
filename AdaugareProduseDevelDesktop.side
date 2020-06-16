@@ -2,7 +2,7 @@
   "id": "6e791ad5-9cc4-417f-b38a-4c24a08bd4e9",
   "version": "2.0",
   "name": "AdaugareProduseDevelDesktop",
-  "url": "http://52.212.215.104/iasi2",
+  "url": "http://52.212.215.104",
   "tests": [{
     "id": "d23ba5af-6036-44d8-80e5-ee433375718f",
     "name": "1. Client logat - Adaugare produs simplu in cos - Checkout",
@@ -10,7 +10,7 @@
       "id": "bdbc07b0-e14e-477a-9f3e-8c11f3a01350",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://52.212.215.104/iasi2",
+      "target": "http://52.212.215.104/",
       "targets": [],
       "value": ""
     }, {
@@ -844,7 +844,7 @@
       "id": "3077da19-8471-4b4a-965e-0d56643cd0ba",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://52.212.215.104/iasi2",
+      "target": "http://52.212.215.104",
       "targets": [],
       "value": ""
     }, {
@@ -1815,43 +1815,2564 @@
       "targets": [],
       "value": ""
     }]
+  }, {
+    "id": "8d452706-33db-4088-9eb0-b16be97b6303",
+    "name": "3. Client logat - Produs Simplu - Ramburs - Checkout",
+    "commands": [{
+      "id": "af9bb2b0-11fa-4fcc-9492-de3b921b756c",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da1fdbfd-c7f3-4a0f-beee-629dc5e8990d",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0f0abd8-1e68-4380-8c1e-185f6b44ff2a",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7ac57cf7-ccf5-45a8-8edb-b75aac9a3e0d",
+      "comment": "Wait - Click pe Autentifica-te",
+      "command": "waitForElementVisible",
+      "target": "css=.blue-gradient > div",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "70ad4139-33e1-4e1a-9cd2-867b6679d417",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.blue-gradient > div",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e07938d3-2568-4d6d-87b1-a0ece4ba4b2a",
+      "comment": "Verificam daca apare pop-up cu localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "414cb18d-4c9d-44a4-8c33-9a209733b493",
+      "comment": "Daca popupul cu Localitate apare",
+      "command": "if",
+      "target": "${x}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "421ce414-d8b2-475a-b761-9b5d58972de2",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(2) .input", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4eca3367-28dd-4445-bdf0-543054a43596",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "ed6e3375-1002-4c9d-907d-506c5bca84bb",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(2) .input", "css:finder"],
+        ["xpath=//input[@value='Alba']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "49f762c4-dddb-440b-99c7-aa68d1a16294",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(3) .input", "css:finder"],
+        ["xpath=(//input[@value=''])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "67e826aa-2e24-44e6-8b53-fc9393d72083",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "224c1026-6900-417d-a98f-40e12fabe709",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(2) .input", "css:finder"],
+        ["xpath=//input[@value='Alba']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2ef766c5-56d3-471d-b5cf-d13827f71912",
+      "comment": "Click pe Dedeman Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "990aa0a6-35af-4af7-9d10-140e4242d1f0",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5aad36d2-6295-4b6c-9cb5-16a85f5b5dd1",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d12a2bb5-d53a-4ed7-b5bb-4737007d7c69",
+      "comment": "Wait - Contul Clientului",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Contul Clientului')]",
+      "targets": [
+        ["css=.left > .authentification-title", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Contul Clientului')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "66251189-23a8-4d49-bdc9-a4c7be6e72cb",
+      "comment": "In campul Adresa de email introducem adresa userului",
+      "command": "type",
+      "target": "css=.form-row:nth-child(1) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='test@code932.com']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "andrei.rusu@icoldo.com"
+    }, {
+      "id": "2205e646-2882-404f-8f34-9cd61a32f8dc",
+      "comment": "In campul parola introducem parola",
+      "command": "type",
+      "target": "css=.form-row:nth-child(2) > .input",
+      "targets": [
+        ["css=.form-row:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@value='testtest']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "123456"
+    }, {
+      "id": "f4d49355-21de-4633-b70f-799e472d5fe5",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "css=.full-width > div",
+      "targets": [
+        ["css=.full-width > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/form/button/div", "xpath:idRelative"],
+        ["xpath=//form/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66eab2fa-84f1-42a8-a6cc-587365bcad81",
+      "comment": "Wait - Contul Clientului",
+      "command": "waitForElementNotPresent",
+      "target": "xpath=//h2[contains(.,'Contul Clientului')]",
+      "targets": [
+        ["css=.left > .authentification-title", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/h2", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Contul Clientului')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "58e163aa-52ba-4b22-af23-b0413eb2da0a",
+      "comment": "Wait - Contul meu",
+      "command": "waitForElementVisible",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "7a3a6dba-4cef-4aee-ac42-8e104123d60c",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fcdb891c-ad7a-46be-9cf8-4ee241b763e3",
+      "comment": "Wait - userul Rusu Andrei e logat cu succes",
+      "command": "waitForElementPresent",
+      "target": "xpath=//p[contains(.,'Rusu Andrei')]",
+      "targets": [
+        ["css=.customer-name", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Rusu Andrei')]", "xpath:innerText"]
+      ],
+      "value": "Rusu Andrei"
+    }, {
+      "id": "73d58768-4046-45d1-87ef-7a11dec1cdce",
+      "comment": "Verificam daca userul Rusu Andrei e logat cu succes",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[contains(.,'Rusu Andrei')]",
+      "targets": [
+        ["css=.customer-name", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div/p[2]", "xpath:idRelative"],
+        ["xpath=//p[2]", "xpath:position"],
+        ["xpath=//p[contains(.,'Rusu Andrei')]", "xpath:innerText"]
+      ],
+      "value": "Rusu Andrei"
+    }, {
+      "id": "e37e2849-a24a-4d2d-8a30-ae41f1f82834",
+      "comment": "Wait - Toate Departamentele",
+      "command": "waitForElementVisible",
+      "target": "css=.header-bottom_left > .semibold",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "e380238a-0e37-4750-a336-8015d78002a2",
+      "comment": "Selectam Toate Departamentele",
+      "command": "click",
+      "target": "css=.header-bottom_left > .semibold",
+      "targets": [
+        ["css=.header-bottom_left > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Toate Departamentele')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "09a957bb-9cf8-4f72-adf4-c9514cd207ef",
+      "comment": "Click pe Bucatarie",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Bucatarie')]",
+      "targets": [
+        ["css=.active > .category-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[2]/div/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Bucatarie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "39b73c34-53b8-45da-a2df-aaaecceafc6f",
+      "comment": "Wait - mai multe",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[contains(.,'+ mai multe')]",
+      "targets": [
+        ["css=.toggle", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'+ mai multe')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "1b52e83d-d73b-48ec-b042-370409e7f410",
+      "comment": "Click pe +mai multe",
+      "command": "click",
+      "target": "css=.toggle",
+      "targets": [
+        ["css=.toggle", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'+ mai multe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "227c35d7-961d-44e6-91ff-84ab06a2df5d",
+      "comment": "Selectam Mese",
+      "command": "click",
+      "target": "xpath=//a[contains(.,'Mese (')]",
+      "targets": [
+        ["linkText=Mese (225)", "linkText"],
+        ["css=.wrapper-categories-list li:nth-child(10) > a", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/iasi2/mese/c/88')]", "xpath:href"],
+        ["xpath=//div/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Mese (225)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c928d093-d320-4e01-b7d2-093f4c418631",
+      "comment": "Wait - Mese",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Mese')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Mese')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "39d822ff-126c-436e-b812-554d7b139847",
+      "comment": "Selectam Masute cafea",
+      "command": "click",
+      "target": "xpath=//a[contains(@href, '/iasi2/masute-cafea/c/491')]",
+      "targets": [
+        ["linkText=Masute cafea (69)", "linkText"],
+        ["css=.wrapper-categories-list li:nth-child(1) > a", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/iasi2/masute-cafea/c/491')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Masute cafea (69)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c8cd531-358c-477b-9fd7-ba835bd4e19e",
+      "comment": "Wait - Masute cafea",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Masute cafea')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Masute cafea')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c2e0d03a-2f1f-45db-88d9-dcbe79baab62",
+      "comment": "Selectam sa fie disponibile Online",
+      "command": "click",
+      "target": "id=filter-id-status-1",
+      "targets": [
+        ["id=filter-id-status-1", "id"],
+        ["css=#filter-id-status-1", "css:finder"],
+        ["xpath=//input[@id='filter-id-status-1']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a329d9e4-4696-4f77-8fc7-623a07615f63",
+      "comment": "Wait - Online",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'Online (')]",
+      "targets": [
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Online (120)')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2a033819-b385-447e-8596-99d6f44f3b9a",
+      "comment": "Selectam sa fie In magazinul fizic",
+      "command": "click",
+      "target": "id=filter-id-status-2",
+      "targets": [
+        ["id=filter-id-status-2", "id"],
+        ["css=#filter-id-status-2", "css:finder"],
+        ["xpath=//input[@id='filter-id-status-2']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]/a/div/span/input", "xpath:idRelative"],
+        ["xpath=//li[2]/a/div/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5ccaa33-ce25-44de-907d-b3adca2b357e",
+      "comment": "Wait - In magazinul fizic",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'2 filtre')]",
+      "targets": [
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2 filtre')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "9c970831-e66c-47f0-893a-0652d367c14d",
+      "comment": "Selectam forma blat asimetrica",
+      "command": "click",
+      "target": "id=filter-id-forma_blat_filtru-asimetrica",
+      "targets": [
+        ["id=filter-id-forma_blat_filtru-asimetrica", "id"],
+        ["css=#filter-id-forma_blat_filtru-asimetrica", "css:finder"],
+        ["xpath=//input[@id='filter-id-forma_blat_filtru-asimetrica']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div[2]/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/ul/li/a/div/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "62a6ce95-d604-4705-b421-13824e5edb4e",
+      "comment": "Wait - Forma blat - Asimetrica",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'asimetrica (')]",
+      "targets": [
+        ["css=.inline-block:nth-child(2) > .wrap-fake-select span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'asimetrica (1)')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "d41330e6-4365-4b01-994b-f70aa7d9c6dc",
+      "comment": "Verificam ca e afisat produsul - Masuta cafea din sticla MC-01",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46ef66a3-95e9-4e6a-ab07-7d82ce6a6bd8",
+      "comment": "Stocam variabila pret - pret1",
+      "command": "storeText",
+      "target": "css=.product-price",
+      "targets": [
+        ["css=.product-price", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "pret1"
+    }, {
+      "id": "e4fe00e5-51e3-433f-9ef4-5f6c581abbed",
+      "comment": "Stocam variabila finala - pret",
+      "command": "executeScript",
+      "target": "return parseFloat(${pret1}.match(/[\\d\\.]+/))",
+      "targets": [],
+      "value": "pret"
+    }, {
+      "id": "caae9e60-a20a-4e1f-ab32-6f813003544a",
+      "comment": "Stocam variabila finala - pretLei",
+      "command": "store",
+      "target": "${pret} lei",
+      "targets": [],
+      "value": "pretLei"
+    }, {
+      "id": "d7749abe-d3db-46a5-a631-358b74cba923",
+      "comment": "Verificam ca e Disponibil Online",
+      "command": "assertElementPresent",
+      "target": "css=.inline-block > .green-text",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5220b4a5-e522-4f6c-8685-dd41b915c40a",
+      "comment": "Verificam ca e Disponibil in magazinul fizic",
+      "command": "assertElementPresent",
+      "target": "css=.inline-block > .blue-text",
+      "targets": [
+        ["css=.inline-block > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[3]/div[2]/span/span/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2c197afb-e403-42b8-82be-cc291f03d40e",
+      "comment": "Dedeman Iasi 2 - Valea Lupului",
+      "command": "assertElementPresent",
+      "target": "css=.availability-row:nth-child(2) .block > span",
+      "targets": [
+        ["css=.availability-row:nth-child(2) .block > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[3]/div[2]/span/span/span[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span/span/span[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc3f7a97-c283-4916-9987-34c369f3525b",
+      "comment": "Click pe Adauga in cos",
+      "command": "click",
+      "target": "css=span:nth-child(1) > div",
+      "targets": [
+        ["css=span:nth-child(1) > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[4]/button/span/div", "xpath:idRelative"],
+        ["xpath=//button/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1ece4bde-e80c-4ae1-b44d-c84639d86836",
+      "comment": "Wait - Produsul a fost adaugat in cosul de cumparaturi",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]",
+      "targets": [
+        ["css=.head > p", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "92b8879f-d27c-4c32-acdb-d53facfd6f26",
+      "comment": "Verificam ca Produsul a fost adaugat in cosul de cumparaturi",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]",
+      "targets": [
+        ["css=.head > p", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff7c91af-c9fc-41b4-95d0-d05ec64a825d",
+      "comment": "Verificam ca produsul selectat a fost adaugat in cos",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(text(),'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]",
+      "targets": [
+        ["linkText=Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C", "linkText"],
+        ["css=.name", "css:finder"],
+        ["xpath=//a[contains(text(),'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div[2]/div/div/div/span[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/iasi2/masute-cafea/c/491?attrs%5Bstatus%5D%5B0%5D=1&attrs%5Bstatus%5D%5B1%5D=2&attrs%5Bforma_blat_filtru%5D%5B0%5D=asimetrica&page=1')]", "xpath:href"],
+        ["xpath=//span[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "541fc6a0-9755-423f-be5f-98cfa5460a1b",
+      "comment": "Verificam ca totalul cosului este acelasi",
+      "command": "verifyText",
+      "target": "css=.product-price:nth-child(2)",
+      "targets": [],
+      "value": "${pretLei}"
+    }, {
+      "id": "80952643-6ea2-4043-9b89-4139b454afe0",
+      "comment": "Click pe Finalizeaza comanda",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Finalizeaza comanda ›')]",
+      "targets": [
+        ["css=a > .orange-gradient", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div[2]/div/div/div[2]/div[2]/a/button", "xpath:idRelative"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizeaza comanda ›')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f49caad3-f1ef-4fe2-a093-df8d8a206e26",
+      "comment": "Wait - Cosul de cumparaturi este afisat",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[contains(.,'Cos cumparaturi')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "c3911d1b-fa4e-44af-a472-8bd921368c8c",
+      "comment": "Verificam ca Cosul de cumparaturi este afisat",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[contains(.,'Cos cumparaturi')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Cos cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3f8084ed-b4ea-4401-8230-0f05597ad350",
+      "comment": "Verificam ca produsul este in cos",
+      "command": "assertElementPresent",
+      "target": "xpath=(//a[contains(@href, '/iasi2/masuta-cafea-mc-01-finisaj-negru-2c/p/8031102')])[2]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Masuta cafea MC-01 finisaj negru 2C')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div/span/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/iasi2/masuta-cafea-mc-01-finisaj-negru-2c/p/8031102')])[2]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "16ee002b-7c75-497c-b452-bbae87a27538",
+      "comment": "Verificam Cantitatea sa fie 1",
+      "command": "assertElementPresent",
+      "target": "xpath=//input[@value='1']",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@value='1']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7853ca04-c01d-490c-a450-2ef8fac47795",
+      "comment": "Verificam ca produsul e vandut la bucata",
+      "command": "assertText",
+      "target": "css=.block:nth-child(1) > div",
+      "targets": [],
+      "value": "bucata"
+    }, {
+      "id": "07900210-46d1-402c-89c7-5eac46500898",
+      "comment": "Verificam ca Pretul unitar este acelasi",
+      "command": "verifyText",
+      "target": "xpath=//div/div[3]/div/span",
+      "targets": [],
+      "value": "${pret}"
+    }, {
+      "id": "a75fbb8c-0184-488e-b6ce-f493083592ba",
+      "comment": "Verificam Totalul sa fie acelasi",
+      "command": "verifyText",
+      "target": "css=.table-cell:nth-child(4) .bold",
+      "targets": [
+        ["css=.table-cell:nth-child(4) .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[4]/div/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/span", "xpath:position"]
+      ],
+      "value": "${pret}"
+    }, {
+      "id": "6a1bdb7f-d3c3-4c19-8104-ca5935d60b2d",
+      "comment": "Verificam ca Produsul e In stoc",
+      "command": "assertText",
+      "target": "css=.label-stock",
+      "targets": [],
+      "value": "In stoc"
+    }, {
+      "id": "c9ea4861-f377-4bcc-a3b5-08cdf851c9cd",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "css=.inline > .button > div",
+      "targets": [
+        ["css=.inline > .button > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[3]/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d8d98a8-698e-4fd4-a973-53b95f7a54f4",
+      "comment": "Wait - Pagina Informatii despre facturare e afisata",
+      "command": "waitForElementPresent",
+      "target": "xpath=//h1[contains(.,'Informatii despre facturare')]",
+      "targets": [
+        ["css=.blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Informatii despre facturare')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "0d8d4da0-35f9-4651-9e72-1d82707e5e83",
+      "comment": "Verificam ca pagina Informatii despre facturare e afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Informatii despre facturare')]",
+      "targets": [
+        ["css=.blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Informatii despre facturare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f146d64c-ca6c-4012-8dca-bea8e09fa522",
+      "comment": "Verificam ca adresa de livrare este bifata",
+      "command": "assertChecked",
+      "target": "id=billing-address-1355",
+      "targets": [
+        ["id=billing-address-1355", "id"],
+        ["css=#billing-address-1355", "css:finder"],
+        ["xpath=//input[@id='billing-address-1355']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1841bc22-024a-4fd7-ac27-beb57a6296cb",
+      "comment": "Verificam ca Nume Prenume sunt corecte",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Andrei Rusu')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9930d027-3b82-4c02-8414-fb2d4ff37856",
+      "comment": "Verificam ca numarul de telefon e cel corect",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'0740201852')]",
+      "targets": [
+        ["css=span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div/span[3]", "xpath:idRelative"],
+        ["xpath=//span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'0740201852')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "cdef98f1-39be-48cc-9a15-58b4f6b5335b",
+      "comment": "Verificam ca strada e cea corecta",
+      "command": "assertText",
+      "target": "css=.content:nth-child(2)",
+      "targets": [
+        ["css=.content:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]", "xpath:idRelative"],
+        ["xpath=//label/div/div[2]", "xpath:position"]
+      ],
+      "value": "Str. Simion Barnutiu 55, Nr. 55, 700118, Iasi, Iaşi"
+    }, {
+      "id": "ead9b28e-2491-4155-81a2-8c1cedbe0b08",
+      "comment": "Verificam ca e bifat: Datele de livrare sunt identice cu datele de facturare",
+      "command": "assertChecked",
+      "target": "id=same-shipping-address",
+      "targets": [
+        ["id=same-shipping-address", "id"],
+        ["css=#same-shipping-address", "css:finder"],
+        ["xpath=//input[@id='same-shipping-address']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div[3]/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bd8c4873-4eec-42a6-84a8-97911610ad43",
+      "comment": "Verificam totalul sa fie acelasi",
+      "command": "verifyText",
+      "target": "css=.grand-total > .pull-right",
+      "targets": [],
+      "value": "${pretLei}"
+    }, {
+      "id": "15f99d14-4c87-4ff4-8cbd-94c6bb610583",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Pasul urmator ›')]",
+      "targets": [
+        ["css=.orange-gradient", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pasul urmator ›')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb9ab1fa-db60-4d75-9454-e5b4847297a6",
+      "comment": "Wait - pagina Modalitati de livrare este afisata",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Modalitati de livrare')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "faf68e8c-951f-4a06-b4fc-d555da6f55fc",
+      "comment": "Verificam ca pagina Modalitati de livrare este afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Modalitati de livrare')]",
+      "targets": [
+        ["css=.col-lg-offset-2 > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Modalitati de livrare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "38361ef0-10d2-45da-9365-ddcbbc49840b",
+      "comment": "Verificam ca produsul selectat e in cos",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'1 x Masuta cafea MC-01 finisaj negru 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/ul/li/span", "xpath:idRelative"],
+        ["xpath=//li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1 x Masuta cafea MC-01 finisaj negru 2C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "48fe950c-10b8-451d-85d7-c233d1f4972f",
+      "comment": "Verificam ca pretul produsului sa fie acelasi",
+      "command": "verifyText",
+      "target": "css=.semibold > .pull-right > .bold",
+      "targets": [],
+      "value": "${pret}"
+    }, {
+      "id": "b0853142-de38-461a-a92d-40c8f30859b2",
+      "comment": "Bifam Flota Dedeman",
+      "command": "click",
+      "target": "xpath=//*/div/input[contains(@value,'dedemanfleet')]",
+      "targets": [
+        ["id=address-18099", "id"],
+        ["css=#address-18099", "css:finder"],
+        ["xpath=//input[@id='address-18099']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0d6260b-6b76-4fee-b043-901b54f48125",
+      "comment": "Verificam ca optiunea selectata e 30 lei",
+      "command": "assertText",
+      "target": "xpath=//span[contains(.,'30.00')]",
+      "targets": [
+        ["css=.semibold > .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]/p/span", "xpath:idRelative"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'30.00')]", "xpath:innerText"]
+      ],
+      "value": "30.00"
+    }, {
+      "id": "cbbd5fec-68f6-4b3a-b7fb-c98271a6be96",
+      "comment": "Stocam variabila transport - t",
+      "command": "storeText",
+      "target": "css=.semibold > .bold",
+      "targets": [
+        ["css=.semibold > .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]/p/span", "xpath:idRelative"],
+        ["xpath=//p/span", "xpath:position"],
+        ["xpath=//span[contains(.,'35.00')]", "xpath:innerText"]
+      ],
+      "value": "t"
+    }, {
+      "id": "53eab27e-2654-4ac1-ada9-97a158bc8c8c",
+      "comment": "Calculam cost total - total",
+      "command": "executeScript",
+      "target": "return (${pret}+parseFloat(${t}))",
+      "targets": [],
+      "value": "total"
+    }, {
+      "id": "615f5632-c720-4f1a-adb8-616a1f702327",
+      "comment": "Verificam ca Totalul include transportul - total",
+      "command": "verifyText",
+      "target": "css=.grand-total > .pull-right > .bold",
+      "targets": [
+        ["css=.grand-total > .pull-right > .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div/div/div[2]/span[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span[2]/span", "xpath:position"]
+      ],
+      "value": "${total}"
+    }, {
+      "id": "8944ff1f-8197-441a-9345-c89928390ddf",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Pasul urmator ›')]",
+      "targets": [
+        ["css=.orange-gradient", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pasul urmator ›')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "98c84ea6-00b8-47fe-b05d-25fc682767c2",
+      "comment": "Wait - pagina Modalitati de plata este afisata",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Modalitati de plata')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "3df6dfc7-61b7-4303-8eb8-bd8eeb2882c6",
+      "comment": "Verificam ca pagina Modalitati de plata este afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Modalitati de plata')]",
+      "targets": [
+        ["css=.blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Modalitati de plata')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "2cd1e8a1-ad10-4e62-81c1-788f7826ffb3",
+      "comment": "Selectam Ramburs",
+      "command": "click",
+      "target": "id=payment-cashondelivery",
+      "targets": [
+        ["id=payment-cashondelivery", "id"],
+        ["css=#payment-cashondelivery", "css:finder"],
+        ["xpath=//input[@id='payment-cashondelivery']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div[3]/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "deca4679-33f7-4e2a-9b09-ba2e06ef59a2",
+      "comment": "Stocam variabila ramburs - r",
+      "command": "storeText",
+      "target": "css=.clearfix:nth-child(3) > .pull-right .bold",
+      "targets": [
+        ["css=.clearfix:nth-child(3) > .pull-right .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div/div/div[3]/span[2]/span/span", "xpath:idRelative"],
+        ["xpath=//div[3]/span[2]/span/span", "xpath:position"]
+      ],
+      "value": "r"
+    }, {
+      "id": "8987e252-ae56-48c3-b829-0cf58ac1de52",
+      "comment": "Calculam cost total - z",
+      "command": "executeScript",
+      "target": "return (parseFloat(${total})+parseFloat(${r}))",
+      "targets": [],
+      "value": "z"
+    }, {
+      "id": "526803b4-8b15-4909-a1ad-ce62bebb8dae",
+      "comment": "Verificam total - pret + livrare + ramburs",
+      "command": "verifyText",
+      "target": "css=.grand-total > .pull-right > .bold",
+      "targets": [
+        ["css=.grand-total > .pull-right > .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div/div/div[4]/span[2]/span", "xpath:idRelative"],
+        ["xpath=//div[4]/span[2]/span", "xpath:position"]
+      ],
+      "value": "${z}"
+    }, {
+      "id": "7a1f40d8-2cde-4a16-b323-80c81bc2a631",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "css=.orange-gradient > div",
+      "targets": [
+        ["css=.orange-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div[2]/button/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6972bdb8-ba28-4a27-8a11-5bdacdef97a5",
+      "comment": "Wait - Finalizare comanda",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Finalizare comanda')]",
+      "targets": [
+        ["css=.col-sm-12 > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Finalizare comanda')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "42811ef9-6849-4d0f-bb8e-e838fffc9b2d",
+      "comment": "Verificam ca pagina Finalizare comanda e afisata",
+      "command": "verifyElementPresent",
+      "target": "css=.col-sm-12 > .blue-text",
+      "targets": [
+        ["css=.col-sm-12 > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Finalizare comanda')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0d09143b-2dc7-4f98-8591-f544e52eb5e9",
+      "comment": "Verificam Informatii facturare - Persoana fizica",
+      "command": "verifyText",
+      "target": "css=.summary-box:nth-child(1) > .summary-content > .medium-size",
+      "targets": [
+        ["css=.summary-box:nth-child(1) > .summary-content > .medium-size", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Persoana fizica')]", "xpath:innerText"]
+      ],
+      "value": "Persoana fizica"
+    }, {
+      "id": "98f03f41-7a4c-40ac-a16c-0e3e3a7ba9c0",
+      "comment": "Verificam Informatii facturare - Prenume Nume",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(1) > .summary-content span:nth-child(1)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) > .summary-content span:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Andrei Rusu')]", "xpath:innerText"]
+      ],
+      "value": "Andrei Rusu"
+    }, {
+      "id": "c2685978-1347-4553-a20e-4a52681fef8e",
+      "comment": "Verificam Informatii facturare - Telefon",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(1) span:nth-child(3)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span[3]", "xpath:idRelative"],
+        ["xpath=//span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'0740201852')]", "xpath:innerText"]
+      ],
+      "value": "0740201852"
+    }, {
+      "id": "d7b55e98-2924-493a-b7a2-db62d4e0da54",
+      "comment": "Verificam Informatii facturare - Adresa",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(1) .content",
+      "targets": [
+        ["css=.summary-box:nth-child(1) .content", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Str. Simion Barnutiu 55, Nr. 55, 700118, Iasi, Iaşi"
+    }, {
+      "id": "72a0d959-b933-417f-a660-adac94bf5421",
+      "comment": "Verificam Informatii Livrare",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) .semibold",
+      "targets": [
+        ["css=.summary-box:nth-child(2) .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Informatii livrare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "46c91b37-1888-44ac-bac7-b11576398795",
+      "comment": "Verificam Informatii facturare - Prenume Nume",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) > .summary-content span:nth-child(1)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) > .summary-content span:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Andrei Rusu')]", "xpath:innerText"]
+      ],
+      "value": "Andrei Rusu"
+    }, {
+      "id": "668d23a0-15dd-40c5-9201-6642fa5e15be",
+      "comment": "Verificam Informatii facturare - Telefon",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) span:nth-child(3)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span[3]", "xpath:idRelative"],
+        ["xpath=//span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'0740201852')]", "xpath:innerText"]
+      ],
+      "value": "0740201852"
+    }, {
+      "id": "51bbc62b-46ff-4f59-ac52-244d6e0719da",
+      "comment": "Verificam Informatii facturare - Adresa",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) .content",
+      "targets": [
+        ["css=.summary-box:nth-child(1) .content", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Str. Simion Barnutiu 55, Nr. 55, 700118, Iasi, Iaşi"
+    }, {
+      "id": "ce7ca224-740d-4223-913b-974cc54f7bd5",
+      "comment": "Verificam Metoda de livrare - Flota dedeman",
+      "command": "verifyText",
+      "target": "css=.method-name",
+      "targets": [
+        ["css=.method-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[3]/div[2]/div/div/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": "Livrare prin Flota Dedeman Standard"
+    }, {
+      "id": "83257c75-3ace-430d-8cfb-ec57ca9fe33a",
+      "comment": "Verificam ca e produsul selectat",
+      "command": "verifyText",
+      "target": "css=.product-row > .pull-left",
+      "targets": [
+        ["css=.product-row > .pull-left", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "1 x Masuta cafea MC-01 finisaj negru 2C"
+    }, {
+      "id": "0b8e18f5-07d1-4607-bf66-404e053d95d6",
+      "comment": "Verificam Modalitatea de plata - Ramburs",
+      "command": "verifyText",
+      "target": "css=.payment-name",
+      "targets": [
+        ["css=.payment-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[4]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Ramburs (la primirea coletului) + 5.99 lei"
+    }, {
+      "id": "05ba9ef4-04d1-4b52-b27c-0cadc2175947",
+      "comment": "Verificam Subtotal ",
+      "command": "verifyText",
+      "target": "css=.subtotal > .pull-right > .bold",
+      "targets": [
+        ["css=.subtotal > .pull-right > .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/div/div/div[2]/div[4]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'351.98')]", "xpath:innerText"]
+      ],
+      "value": "${z}"
+    }, {
+      "id": "7020be39-2a44-433b-8cbd-4c5ec722eafb",
+      "comment": "Verificam total",
+      "command": "verifyText",
+      "target": "css=.align-right > .bold:nth-child(1)",
+      "targets": [
+        ["css=.align-right > .bold:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/span", "xpath:position"]
+      ],
+      "value": "${z}"
+    }, {
+      "id": "52c889fe-ec90-4afe-bb42-ac9b69fd0585",
+      "comment": "Bifeaza - Prin plasarea comenzii...",
+      "command": "click",
+      "target": "id=policy-agree",
+      "targets": [
+        ["id=policy-agree", "id"],
+        ["css=#policy-agree", "css:finder"],
+        ["xpath=//input[@id='policy-agree']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/div[2]/div/span/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2e692c5-e293-4e14-a50f-284ac563fb01",
+      "comment": "Click pe Trimite comanda",
+      "command": "click",
+      "target": "css=.orange-gradient > div",
+      "targets": [
+        ["css=.orange-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "26e24906-00e4-4681-ba70-a8fc6ec07aa4",
+      "comment": "Comanda a fost inregistrata cu succes",
+      "command": "waitForElementVisible",
+      "target": "css=.blue-box:nth-child(1) .head > .semibold",
+      "targets": [
+        ["css=.blue-box:nth-child(1) .head > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/div", "xpath:position"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "33d49747-8dfc-4972-8ba1-f5ec2efcb0d5",
+      "comment": "Stocam variabila z de tip int",
+      "command": "executeScript",
+      "target": "return (parseInt(${z}))",
+      "targets": [],
+      "value": "zInt"
+    }, {
+      "id": "b4371a14-2da5-40bf-95f0-058b8a3ea5e2",
+      "comment": "Verificam - Total valoare",
+      "command": "verifyText",
+      "target": "css=.success-total > span",
+      "targets": [
+        ["css=.success-total > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'351')]", "xpath:innerText"]
+      ],
+      "value": "${zInt}"
+    }, {
+      "id": "fe6141eb-a77d-4c19-a3dd-e0c3843c395d",
+      "comment": "Detaliile comenzii se trimit pe email",
+      "command": "verifyElementPresent",
+      "target": "css=.orange-text",
+      "targets": [
+        ["css=.orange-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'In scurt timp, vei primi un e-mail cu detaliile comenzii!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e519e09c-23a4-47c5-8713-c48ad82ef872",
+      "comment": "Click pe Vezi toate comenzile",
+      "command": "click",
+      "target": "css=.first-button > div",
+      "targets": [
+        ["css=.first-button > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div[3]/a/button/div", "xpath:idRelative"],
+        ["xpath=//a/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6419d4c3-8a7c-426d-95e0-e788066d66e8",
+      "comment": "Wait - Contul meu este afisat",
+      "command": "waitForElementVisible",
+      "target": "xpath=//ul[contains(.,'Contul meuCont')]",
+      "targets": [
+        ["css=.account-breadcrumbs > ul", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div/div/div/ul", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/ul", "xpath:position"],
+        ["xpath=//ul[contains(.,'Contul meuCont')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "7c86f01b-40f3-4606-aed5-7feb941612de",
+      "comment": "Verificam - Comenzi active afisate",
+      "command": "verifyElementPresent",
+      "target": "css=.row:nth-child(1) .blue-text",
+      "targets": [
+        ["css=.row:nth-child(1) .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[4]/div/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Comenzi active')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0aeb43e7-6f80-4988-9499-02b3482cf2a9",
+      "comment": "Verificam - comanda e plasat",
+      "command": "assertText",
+      "target": "css=.inline-block > span:nth-child(2)",
+      "targets": [
+        ["css=.inline-block > span:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[4]/div/div[2]/div/div/div/span[2]/span[2]", "xpath:idRelative"],
+        ["xpath=//span[2]/span[2]", "xpath:position"]
+      ],
+      "value": "Comanda plasata"
+    }, {
+      "id": "4e579dec-bcfa-4d36-af04-03ead8544f56",
+      "comment": "Verificam total",
+      "command": "verifyText",
+      "target": "css=.order-details-wrapper > .semibold",
+      "targets": [
+        ["css=.order-details-wrapper > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[4]/div/div[2]/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div[2]/div/div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Total: 351.98 lei')]", "xpath:innerText"]
+      ],
+      "value": "Total: ${z} lei"
+    }, {
+      "id": "579eebb9-f8dd-42ae-834e-0d2184e7a144",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "90b1960e-cbdd-4651-b640-21626e7d9382",
+      "comment": "Click pe Delogare",
+      "command": "click",
+      "target": "linkText=Delogare",
+      "targets": [
+        ["linkText=Delogare", "linkText"],
+        ["css=.logout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Delogare')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delogare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1d5e96e2-47fb-441c-be0b-5259562e8e0f",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "7c1f83d3-5d79-4c75-aedc-d681f52fd9bb",
+    "name": "4. Client nelogat - Produs Simplu - Ramburs - Checkout",
+    "commands": [{
+      "id": "8fc1f7ff-ec61-4630-b976-13bfe9a2122f",
+      "comment": "Deschidem pagina Dedeman Iasi",
+      "command": "open",
+      "target": "http://52.212.215.104",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2f096078-69a1-4459-879f-a0d95cb8995a",
+      "comment": "Maximizam fereastra",
+      "command": "setWindowSize",
+      "target": "1920x1080",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3a1b8798-9578-4d34-b07d-7502b78e9185",
+      "comment": "Stocam o variabila pentru Localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//span[2]/span[contains(.,'Iasi, ')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "a796abf6-56c6-4082-a9e9-bdd7ea08d3cd",
+      "comment": "Daca Localitatea nu este selectata",
+      "command": "if",
+      "target": "${x}<1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c1ecc6e-cfec-4a98-a259-a2f75205b478",
+      "comment": "Click pe Alege-ti localitatea",
+      "command": "click",
+      "target": "css=.store-label",
+      "targets": [
+        ["css=.store-label", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div/div/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "38eac21b-9d3b-402b-9dd5-c68d8f8cc8fc",
+      "comment": "Verificam ca Popupul pentru localitate e afisat",
+      "command": "verifyElementPresent",
+      "target": "css=.select-locality-header",
+      "targets": [
+        ["css=.select-locality-header", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b3c7c256-b2db-4222-985a-dfd1e8a27892",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(2) .input", "css:finder"],
+        ["xpath=(//input[@value=''])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9a65b29-82cf-49c7-86ff-5ca71d8a67f6",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "518499ca-1954-4268-8200-19fa2b7d24e4",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(2) .input", "css:finder"],
+        ["xpath=//input[@value='Alba']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e0864f3d-b902-46df-aa9d-433d6ba83820",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(3) .input", "css:finder"],
+        ["xpath=(//input[@value=''])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[2]/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fbda3f3b-178a-4030-beaf-21821e451575",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "77595cfa-3b9b-4fb9-81f2-925a4ea30fab",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [
+        ["css=.select-locality-input:nth-child(2) .input", "css:finder"],
+        ["xpath=//input[@value='Alba']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8ff2cee7-ed7b-4bc1-b752-f3e9e64bfad7",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "79829b6c-b14a-4a13-be5a-932dc650d3de",
+      "comment": "Wait - Toate Departamentele",
+      "command": "waitForElementVisible",
+      "target": "css=.header-bottom_left > .semibold",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "ffcd17e8-8c8f-4872-bc0a-9256c5b96d16",
+      "comment": "Selectam Toate Departamentele",
+      "command": "click",
+      "target": "css=.header-bottom_left > .semibold",
+      "targets": [
+        ["css=.header-bottom_left > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Toate Departamentele')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f8dfdb4-11d1-4601-86dc-4488a40e4a06",
+      "comment": "Click pe Bucatarie",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Bucatarie')]",
+      "targets": [
+        ["css=.active > .category-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[2]/div/div/div/div/div[2]/a/span", "xpath:idRelative"],
+        ["xpath=//div[2]/a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Bucatarie')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c919583-9f95-4bbe-9017-f83bd7e64d26",
+      "comment": "Wait - mai multe",
+      "command": "waitForElementVisible",
+      "target": "xpath=//p[contains(.,'+ mai multe')]",
+      "targets": [
+        ["css=.toggle", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'+ mai multe')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "64f29866-2747-42f3-8be3-6bdc8fef3f9b",
+      "comment": "Click pe +mai multe",
+      "command": "click",
+      "target": "css=.toggle",
+      "targets": [
+        ["css=.toggle", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'+ mai multe')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "55739665-4f14-4cd0-a113-4212f2d40a5f",
+      "comment": "Selectam Mese",
+      "command": "click",
+      "target": "xpath=//a[contains(.,'Mese (')]",
+      "targets": [
+        ["linkText=Mese (225)", "linkText"],
+        ["css=.wrapper-categories-list li:nth-child(10) > a", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/ul/li[10]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/iasi2/mese/c/88')]", "xpath:href"],
+        ["xpath=//div/div/ul/li[10]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Mese (225)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5a4a72f7-53ae-4ba1-9be9-f857a72e2d10",
+      "comment": "Wait - Mese",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Mese')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Mese')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "8b14c4c1-926e-4371-ac87-68c3e4186bca",
+      "comment": "Selectam Masute cafea",
+      "command": "click",
+      "target": "xpath=//a[contains(@href, '/iasi2/masute-cafea/c/491')]",
+      "targets": [
+        ["linkText=Masute cafea (69)", "linkText"],
+        ["css=.wrapper-categories-list li:nth-child(1) > a", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/iasi2/masute-cafea/c/491')]", "xpath:href"],
+        ["xpath=//div[3]/div/div[2]/div/div/div/ul/li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Masute cafea (69)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9459b4a-1c3b-4a84-aef1-ae3984a86e4c",
+      "comment": "Wait - Masute cafea",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Masute cafea')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Masute cafea')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "da5d11d9-56d9-424d-b6b9-1c23bc2c5b12",
+      "comment": "Selectam sa fie disponibile Online",
+      "command": "click",
+      "target": "id=filter-id-status-1",
+      "targets": [
+        ["id=filter-id-status-1", "id"],
+        ["css=#filter-id-status-1", "css:finder"],
+        ["xpath=//input[@id='filter-id-status-1']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0ddd697-034f-4ffa-aeec-9bb686986037",
+      "comment": "Wait - Online",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'Online (')]",
+      "targets": [
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Online (120)')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "3fa0c94b-75a1-44b6-b1d9-cf8732078e2c",
+      "comment": "Selectam sa fie In magazinul fizic",
+      "command": "click",
+      "target": "id=filter-id-status-2",
+      "targets": [
+        ["id=filter-id-status-2", "id"],
+        ["css=#filter-id-status-2", "css:finder"],
+        ["xpath=//input[@id='filter-id-status-2']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div/div[2]/ul/li[2]/a/div/span/input", "xpath:idRelative"],
+        ["xpath=//li[2]/a/div/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cbb5dd12-af55-4fa3-965f-954194a761c1",
+      "comment": "Wait - In magazinul fizic",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'2 filtre')]",
+      "targets": [
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div/div/div/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2 filtre')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "3810bb30-d286-472f-8c45-c1eb1f03fc18",
+      "comment": "Selectam forma blat asimetrica",
+      "command": "click",
+      "target": "id=filter-id-forma_blat_filtru-asimetrica",
+      "targets": [
+        ["id=filter-id-forma_blat_filtru-asimetrica", "id"],
+        ["css=#filter-id-forma_blat_filtru-asimetrica", "css:finder"],
+        ["xpath=//input[@id='filter-id-forma_blat_filtru-asimetrica']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div/div/div[2]/div[2]/ul/li/a/div/span/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/ul/li/a/div/span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d4b5827a-79bf-4c32-ab8e-dcfad9b0b385",
+      "comment": "Wait - Forma blat - Asimetrica",
+      "command": "waitForElementVisible",
+      "target": "xpath=//span[contains(.,'asimetrica (')]",
+      "targets": [
+        ["css=.inline-block:nth-child(2) > .wrap-fake-select span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'asimetrica (1)')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "170e4502-0307-4540-a265-2c37ce5950da",
+      "comment": "Wait - e afisat produsul - Masuta cafea din sticla MC-01",
+      "command": "waitForElementPresent",
+      "target": "xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2ddc33c8-4255-42e2-98e4-0834eb5b15c5",
+      "comment": "Verificam ca e afisat produsul - Masuta cafea din sticla MC-01",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/a/span[2]", "xpath:idRelative"],
+        ["xpath=//a/span[2]", "xpath:position"],
+        ["xpath=//span[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "39c6da01-5d72-44fc-ac7c-20cbaf6bf5da",
+      "comment": "Stocam variabila pret - pret1",
+      "command": "storeText",
+      "target": "css=.product-price",
+      "targets": [
+        ["css=.product-price", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[3]/div[3]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "pret1"
+    }, {
+      "id": "f1d07f35-ff28-4156-bb7c-913173bc9a92",
+      "comment": "Stocam variabila finala - pret",
+      "command": "executeScript",
+      "target": "return parseFloat(${pret1}.match(/[\\d\\.]+/))",
+      "targets": [],
+      "value": "pret"
+    }, {
+      "id": "277dce9f-9d93-4242-a4f7-533b45d8df77",
+      "comment": "Stocam variabila finala - pretLei",
+      "command": "store",
+      "target": "${pret} lei",
+      "targets": [],
+      "value": "pretLei"
+    }, {
+      "id": "7414c96e-5ba8-43d5-bd45-96de8c185e0c",
+      "comment": "Verificam ca e Disponibil Online",
+      "command": "assertElementPresent",
+      "target": "css=.inline-block > .green-text",
+      "targets": [
+        ["css=.inline-block > .green-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[3]/div/span/span/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/span/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b918b3d3-8be0-4eea-b0b0-ff1d1b3c7045",
+      "comment": "Verificam ca e Disponibil in magazinul fizic",
+      "command": "assertElementPresent",
+      "target": "css=.inline-block > .blue-text",
+      "targets": [
+        ["css=.inline-block > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[3]/div[2]/span/span/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span/span/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5d77fe9f-1ac6-400f-908c-eedfb2045634",
+      "comment": "Dedeman Iasi 2 - Valea Lupului",
+      "command": "assertElementPresent",
+      "target": "css=.availability-row:nth-child(2) .block > span",
+      "targets": [
+        ["css=.availability-row:nth-child(2) .block > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[3]/div[2]/span/span/span[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/span/span/span[2]/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "404847ab-2c36-43d0-9cff-0f1239cf24ff",
+      "comment": "Click pe Adauga in cos",
+      "command": "click",
+      "target": "css=span:nth-child(1) > div",
+      "targets": [
+        ["css=span:nth-child(1) > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[4]/button/span/div", "xpath:idRelative"],
+        ["xpath=//button/span/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "985a80c9-cf78-4db8-8e98-7c01ba13e2e0",
+      "comment": "Wait - Produsul a fost adaugat in cosul de cumparaturi",
+      "command": "waitForElementPresent",
+      "target": "xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]",
+      "targets": [
+        ["css=.head > p", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "2fa0de0b-ae29-473f-b185-4d1c23c50279",
+      "comment": "Verificam ca Produsul a fost adaugat in cosul de cumparaturi",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]",
+      "targets": [
+        ["css=.head > p", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Produsul a fost adaugat in cosul de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b72d374-56ff-447e-8b51-bd836eaec1e6",
+      "comment": "Verificam ca produsul selectat a fost adaugat in cos",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(text(),'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]",
+      "targets": [
+        ["linkText=Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C", "linkText"],
+        ["css=.name", "css:finder"],
+        ["xpath=//a[contains(text(),'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div[2]/div/div/div/span[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/iasi2/masute-cafea/c/491?attrs%5Bstatus%5D%5B0%5D=1&attrs%5Bstatus%5D%5B1%5D=2&attrs%5Bforma_blat_filtru%5D%5B0%5D=asimetrica&page=1')]", "xpath:href"],
+        ["xpath=//span[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c226f63c-a218-4234-9924-75b0bdee5291",
+      "comment": "Verificam ca totalul cosului este acelasi",
+      "command": "verifyText",
+      "target": "css=.product-price:nth-child(2)",
+      "targets": [
+        ["css=.product-price:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div[2]/div/div/div[2]/div/span[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span[2]", "xpath:position"]
+      ],
+      "value": "${pretLei}"
+    }, {
+      "id": "41dc69ac-8f33-4510-ac48-949762277341",
+      "comment": "Click pe Finalizeaza comanda",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Finalizeaza comanda ›')]",
+      "targets": [
+        ["css=a > .orange-gradient", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div[3]/div/div[2]/div/div/div[2]/div[2]/a/button", "xpath:idRelative"],
+        ["xpath=//a/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Finalizeaza comanda ›')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "413ad9c2-96b8-42c7-8ff9-6409471ca27b",
+      "comment": "Wait - Cosul de cumparaturi este afisat",
+      "command": "waitForElementPresent",
+      "target": "xpath=//p[contains(.,'Cos cumparaturi')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "cf39cefc-8a63-4079-99c0-053e79518529",
+      "comment": "Verificam ca Cosul de cumparaturi este afisat",
+      "command": "assertElementPresent",
+      "target": "xpath=//p[contains(.,'Cos cumparaturi')]",
+      "targets": [
+        ["css=.page-title", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Cos cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9fd363d7-a111-41b9-9b71-7a9e2a83284b",
+      "comment": "Verificam ca produsul este in cos",
+      "command": "assertElementPresent",
+      "target": "xpath=//a[contains(text(),'Masuta cafea MC-01 finisaj negru 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Masuta cafea MC-01 finisaj negru 2C')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div/span/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/iasi2/masuta-cafea-mc-01-finisaj-negru-2c/p/8031102')])[2]", "xpath:href"],
+        ["xpath=//span/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abe7f9a1-c027-46ae-8fd1-dd12a7fba9f2",
+      "comment": "Crestem cantitatea la 2",
+      "command": "click",
+      "target": "css=.icon-select-up",
+      "targets": [
+        ["css=.icon-select-up", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div/span/i", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/span/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eadd8206-d0e2-4338-be4c-a6e0ed5ba089",
+      "comment": "Click - Actualizati",
+      "command": "click",
+      "target": "xpath=//p[contains(.,'Actualizati')]",
+      "targets": [
+        ["css=.small-size", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Actualizati')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f331621d-9498-4e4f-bb16-1f12f4499bf0",
+      "comment": "Verificam Cantitatea sa fie 2",
+      "command": "assertElementPresent",
+      "target": "xpath=//input[@value='2']",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@value='1']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6c9f8e46-6856-4e7d-89e4-fa726b640a71",
+      "comment": "Cream variabila cantitate - 2",
+      "command": "storeValue",
+      "target": "xpath=//input[@value='2']",
+      "targets": [
+        ["css=.form-control", "css:finder"],
+        ["xpath=//input[@value='2']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": "cantitate"
+    }, {
+      "id": "d054d82c-282a-4f91-b671-10f00a7c356d",
+      "comment": "Verificam ca produsul e vandut la bucata",
+      "command": "waitForElementVisible",
+      "target": "css=.block:nth-child(1) > div",
+      "targets": [],
+      "value": "bucati"
+    }, {
+      "id": "112697f8-f626-4ee2-a7ca-b5bd4baece88",
+      "comment": "Verificam ca Pretul unitar este acelasi",
+      "command": "verifyText",
+      "target": "css=.table-cell:nth-child(3) .bold",
+      "targets": [
+        ["css=.table-cell:nth-child(3) .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[3]/div/span", "xpath:idRelative"],
+        ["xpath=//div/div[3]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'281.64')]", "xpath:innerText"]
+      ],
+      "value": "${pret}"
+    }, {
+      "id": "7c725834-7d4f-4d22-8016-1a5db79b0b3e",
+      "comment": "Calculam totalul",
+      "command": "executeScript",
+      "target": "return (${pret}*${cantitate})",
+      "targets": [],
+      "value": "totalPretCantitate"
+    }, {
+      "id": "c743d1ae-1b7a-4146-b0b0-02226033c818",
+      "comment": "Verificam Totalul sa fie acelasi - totalPretCantitate",
+      "command": "verifyText",
+      "target": "css=.table-cell:nth-child(4) .bold",
+      "targets": [
+        ["css=.table-cell:nth-child(4) .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div/div[2]/div/div[2]/div/div[4]/div/span", "xpath:idRelative"],
+        ["xpath=//div/div[4]/div/span", "xpath:position"]
+      ],
+      "value": "${totalPretCantitate}"
+    }, {
+      "id": "060ed2c3-0234-4884-8256-7c24996a4959",
+      "comment": "Verificam ca Produsul e In stoc",
+      "command": "assertText",
+      "target": "css=.label-stock",
+      "targets": [],
+      "value": "In stoc"
+    }, {
+      "id": "2bbc91a3-e144-4aaa-9422-523dad23f533",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "css=.inline > .button > div",
+      "targets": [
+        ["css=.inline > .button > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[3]/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8f2828d2-9358-4cd8-aa7d-49998c1f86ee",
+      "comment": "Verificam ca pagina Client nou? e afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h2[contains(.,'Client nou?')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0dee9d5e-f1c6-4258-a566-72b1292721f2",
+      "comment": "Click pe Continua fara inregistrare cont",
+      "command": "click",
+      "target": "linkText=Continua fara inregistrare cont ›",
+      "targets": [
+        ["linkText=Continua fara inregistrare cont ›", "linkText"],
+        ["css=.guest-checkout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Continua fara inregistrare cont ›')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/iasi2/checkout')])[2]", "xpath:href"],
+        ["xpath=//div[3]/div/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Continua fara inregistrare cont ›')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a5d6204-3b5c-4467-8ca1-ba843cd1ec1e",
+      "comment": "Wait - Pagina Informatii despre facturare e afisata",
+      "command": "waitForElementPresent",
+      "target": "xpath=//h1[contains(.,'Informatii despre facturare')]",
+      "targets": [
+        ["css=.blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Informatii despre facturare')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "c3c10ccc-5098-4285-b9bb-d8f730c368cb",
+      "comment": "Verificam ca pagina Informatii despre facturare e afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Informatii despre facturare')]",
+      "targets": [
+        ["css=.blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Informatii despre facturare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e1c6be4-ace6-4628-b442-8775885ec60d",
+      "comment": "Click pe Persoana fizica",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Persoana Fizica')]",
+      "targets": [
+        ["css=.blue-gradient:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div[2]/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Persoana Fizica')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e607a908-f4b5-4c5e-b4ac-2c99283f8193",
+      "comment": "Verificam ca popup Adauga adresa de facturare a aparut",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Adauga adresa de facturare')]",
+      "targets": [
+        ["css=.head > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Adauga adresa de facturare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "be0ac5bb-a762-4968-9589-7a32bc3f1c19",
+      "comment": "Adaugam Nume - Rusu",
+      "command": "type",
+      "target": "css=.account-field:nth-child(1) > .input",
+      "targets": [
+        ["css=.account-field:nth-child(1) > .input", "css:finder"],
+        ["xpath=//input[@value='Rusu Andrei']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Rusu"
+    }, {
+      "id": "8b50f888-0481-4952-ba48-ce5630ce55fd",
+      "comment": "Adaugam Prenume - Andrei",
+      "command": "type",
+      "target": "name=firstname",
+      "targets": [
+        ["name=firstname", "name"],
+        ["css=.account-field:nth-child(2) > .input", "css:finder"],
+        ["xpath=//input[@name='firstname']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Andrei"
+    }, {
+      "id": "2078d410-76cf-4130-9096-351447e43c9d",
+      "comment": "Adaugam un email inexistent - andrei.rusu@icoldo.ro",
+      "command": "type",
+      "target": "name=email",
+      "targets": [
+        ["name=email", "name"],
+        ["css=.account-field:nth-child(3) > .input", "css:finder"],
+        ["xpath=//input[@name='email']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "andrei.rusu@icoldo.ro"
+    }, {
+      "id": "c443d7ae-eb7f-468c-a747-07186c3868be",
+      "comment": "Adaugam telefon - 0740201852",
+      "command": "type",
+      "target": "name=phone",
+      "targets": [
+        ["name=phone", "name"],
+        ["css=.account-field:nth-child(4) > .input", "css:finder"],
+        ["xpath=//input[@name='phone']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div/div[4]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "0740201852"
+    }, {
+      "id": "2ce5f6ce-3bec-4f4e-990e-1a2f3bd189b8",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "css=select",
+      "targets": [
+        ["css=select", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[2]/span/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6853282-3377-47db-be40-366600594964",
+      "comment": "Selectam Iasi",
+      "command": "select",
+      "target": "css=select",
+      "targets": [],
+      "value": "label=Iaşi"
+    }, {
+      "id": "ee46cc02-0f27-4638-8604-80310af6e786",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "css=.head-fake-select > span",
+      "targets": [
+        ["css=.head-fake-select > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[3]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Alege localitatea')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "72dfcc01-b648-4f28-8f29-7a27f2c0f922",
+      "comment": "Cautam dupa Iasi",
+      "command": "type",
+      "target": "css=.no-error",
+      "targets": [
+        ["css=.no-error", "css:finder"],
+        ["xpath=//input[@value='iasi']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[3]/div/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "iasi"
+    }, {
+      "id": "9c872f0b-d94f-402f-84f2-f6d109fce242",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "css=.dropdown-select > div:nth-child(1)",
+      "targets": [
+        ["css=.dropdown-select > div:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[3]/div/div[3]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div[3]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "696db7b4-9728-4129-aac3-7b0a2381228e",
+      "comment": "Adaugam cod postat - 700118",
+      "command": "type",
+      "target": "name=postcode",
+      "targets": [
+        ["name=postcode", "name"],
+        ["css=.position-relative > .input", "css:finder"],
+        ["xpath=//input[@name='postcode']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[4]/input", "xpath:idRelative"],
+        ["xpath=//form/div[4]/input", "xpath:position"]
+      ],
+      "value": "700118"
+    }, {
+      "id": "8220455f-bb8d-4e8b-902a-5420ce547aa8",
+      "comment": "Adaugam strada - Simion Barnutiu",
+      "command": "type",
+      "target": "css=.account-field:nth-child(6) > .input",
+      "targets": [
+        ["css=.account-field:nth-child(6) > .input", "css:finder"],
+        ["xpath=//input[@value='Simion Barnutiu']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[5]/input", "xpath:idRelative"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "Simion Barnutiu"
+    }, {
+      "id": "c8a163bc-9964-40a4-bdc3-6c2718a80542",
+      "comment": "Adaugam Numar - 55",
+      "command": "type",
+      "target": "css=.account-field:nth-child(7) > .input",
+      "targets": [
+        ["css=.account-field:nth-child(7) > .input", "css:finder"],
+        ["xpath=//input[@value='55']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[6]/input", "xpath:idRelative"],
+        ["xpath=//div[6]/input", "xpath:position"]
+      ],
+      "value": "55"
+    }, {
+      "id": "60140386-f6e2-4589-83a8-fa537fa89182",
+      "comment": "Bifam - Am peste 16 ani ...",
+      "command": "click",
+      "target": "id=policy-agree",
+      "targets": [
+        ["id=policy-agree", "id"],
+        ["css=#policy-agree", "css:finder"],
+        ["xpath=//input[@id='policy-agree']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[10]/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45821ae8-68f3-4cf7-8780-16b9104f94ff",
+      "comment": "Click pe Adauga",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Adauga')]",
+      "targets": [
+        ["css=.popup-buttons > .blue-gradient", "css:finder"],
+        ["xpath=//div[@id='app']/div[4]/div/div[2]/form/div[11]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[11]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'Adauga')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "230f745a-6e26-4a18-bb55-c44f7ac8fc9b",
+      "comment": "Verificam ca adresa de livrare este bifata",
+      "command": "assertChecked",
+      "target": "xpath=//input[contains(@id,'guest-billing-address-')]",
+      "targets": [
+        ["id=guest-billing-address-1109397", "id"],
+        ["css=#guest-billing-address-1109397", "css:finder"],
+        ["xpath=//input[@id='guest-billing-address-1109397']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c414a82d-270b-4eab-8b2d-3793bf6972a6",
+      "comment": "Verificam ca Nume Prenume sunt corecte",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'Andrei Rusu')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a241dbfc-9ced-4e8b-b365-cd8714141c8f",
+      "comment": "Verificam ca numarul de telefon e cel corect",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'0740201852')]",
+      "targets": [
+        ["css=span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div/span[3]", "xpath:idRelative"],
+        ["xpath=//span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'0740201852')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1f134855-5f5d-4498-b06c-a9cb28b7b13a",
+      "comment": "Verificam ca strada e cea corecta",
+      "command": "assertText",
+      "target": "css=.content:nth-child(2)",
+      "targets": [
+        ["css=.content:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]", "xpath:idRelative"],
+        ["xpath=//label/div/div[2]", "xpath:position"]
+      ],
+      "value": "Str. Simion Barnutiu, Nr. 55, 700118, Iasi, Iaşi"
+    }, {
+      "id": "bbbf0e2e-9850-48e9-bef3-60e0946c7c9c",
+      "comment": "Verificam ca e bifat: Datele de livrare sunt identice cu datele de facturare",
+      "command": "assertChecked",
+      "target": "id=same-shipping-address",
+      "targets": [
+        ["id=same-shipping-address", "id"],
+        ["css=#same-shipping-address", "css:finder"],
+        ["xpath=//input[@id='same-shipping-address']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div[3]/div/span/input", "xpath:idRelative"],
+        ["xpath=//span/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ef23d42-556f-4316-a61f-50d691c1cb37",
+      "comment": "Verificam totalul sa fie acelasi",
+      "command": "verifyText",
+      "target": "css=.grand-total > .pull-right > .bold",
+      "targets": [],
+      "value": "${totalPretCantitate}"
+    }, {
+      "id": "ace612e5-3d99-464a-93e5-6ded658dddce",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Pasul urmator ›')]",
+      "targets": [
+        ["css=.orange-gradient", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pasul urmator ›')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6157704c-a704-4a45-89c9-b08db1538880",
+      "comment": "Wait - Pagina Modalitati de livrare este afisata",
+      "command": "waitForElementPresent",
+      "target": "xpath=//h1[contains(.,'Modalitati de livrare')]",
+      "targets": [
+        ["css=.col-lg-offset-2 > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Modalitati de livrare')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "81d85ee2-366e-4704-9da9-c14b0cbf6f86",
+      "comment": "Verificam ca pagina Modalitati de livrare este afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Modalitati de livrare')]",
+      "targets": [
+        ["css=.col-lg-offset-2 > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Modalitati de livrare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5e0422d2-b342-459e-84fa-ecce384b6263",
+      "comment": "Verificam ca produsul selectat e in cos",
+      "command": "assertElementPresent",
+      "target": "xpath=//span[contains(.,'2 x Masuta cafea MC-01 finisaj negru 2C')]",
+      "targets": [
+        ["css=.product-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/ul/li/span", "xpath:idRelative"],
+        ["xpath=//li/span", "xpath:position"],
+        ["xpath=//span[contains(.,'2 x Masuta cafea MC-01 finisaj negru 2C')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e48fdda3-a514-43ed-bfe2-42bb0e7d8ba2",
+      "comment": "Verificam ca pretul produsului e acelasi",
+      "command": "verifyText",
+      "target": "css=.semibold > .pull-right > .bold",
+      "targets": [],
+      "value": "${totalPretCantitate}"
+    }, {
+      "id": "4565f38b-3107-45bf-ae08-258358d7f7da",
+      "comment": "Bifam - Transport gratuit in Iasi",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(1) .bullet",
+      "targets": [
+        ["css=.delivery-row:nth-child(1) .bullet", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8e88523b-93ba-4888-bb13-cb572997da3c",
+      "comment": "Verificam ca optiunea selectata e Gratuita",
+      "command": "assertText",
+      "target": "xpath=//p[contains(.,'Gratuit')]",
+      "targets": [
+        ["css=.delivery-row:nth-child(1) .right > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Gratuit')]", "xpath:innerText"]
+      ],
+      "value": "Gratuit"
+    }, {
+      "id": "1dca4857-406c-4d03-8197-1b43c4a9f461",
+      "comment": "Verificam ca Totalul include transportul - total",
+      "command": "verifyText",
+      "target": "css=.grand-total > .pull-right > .bold",
+      "targets": [],
+      "value": "${totalPretCantitate}"
+    }, {
+      "id": "6f91ecdc-f6f9-429e-9e7f-c8b9b7550e50",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "xpath=//button[contains(.,'Pasul urmator ›')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68bdb64e-09ad-4ee7-8ac8-2ab43a5c76cf",
+      "comment": "Wait - pagina Modalitati de plata este afisata",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Modalitati de plata')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "02696801-4701-4743-9467-aceae96c2aa5",
+      "comment": "Verificam ca pagina Modalitati de plata este afisata",
+      "command": "assertElementPresent",
+      "target": "xpath=//h1[contains(.,'Modalitati de plata')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e73265c9-2cfb-4b3b-8528-4a824548f94f",
+      "comment": "Selectam Ramburs",
+      "command": "click",
+      "target": "id=payment-cashondelivery",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3d969a6-a4de-4644-b575-ab1a5405222d",
+      "comment": "Stocam variabila ramburs - r",
+      "command": "storeText",
+      "target": "css=.clearfix:nth-child(3) > .pull-right .bold",
+      "targets": [],
+      "value": "r"
+    }, {
+      "id": "44adbd0d-9859-4b62-b259-cdb6d7e5e4e2",
+      "comment": "Calculam cost total - z",
+      "command": "executeScript",
+      "target": "return (${totalPretCantitate}+parseFloat(${r}))",
+      "targets": [],
+      "value": "z"
+    }, {
+      "id": "0ec59108-9ac1-4d3f-bccb-55dee65a1566",
+      "comment": "Verificam total - pret + livrare + ramburs",
+      "command": "verifyText",
+      "target": "css=.grand-total > .pull-right > .bold",
+      "targets": [],
+      "value": "${z}"
+    }, {
+      "id": "a5d2bfe4-4792-48fc-9ddd-2bea48d5bf14",
+      "comment": "Click pe Pasul urmator",
+      "command": "click",
+      "target": "css=.orange-gradient > div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "843e335c-c3f8-471f-9979-7710bf996b9b",
+      "comment": "Wait - Finalizare comanda",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h1[contains(.,'Finalizare comanda')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8f06c4f2-a414-4dbb-9890-850ed3ff9629",
+      "comment": "Verificam ca pagina Finalizare comanda e afisata",
+      "command": "verifyElementPresent",
+      "target": "css=.col-sm-12 > .blue-text",
+      "targets": [
+        ["css=.col-sm-12 > .blue-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Finalizare comanda')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "83b44355-eb81-40f8-908d-16c1314b137d",
+      "comment": "Verificam Informatii facturare - Persoana fizica",
+      "command": "verifyText",
+      "target": "css=.summary-box:nth-child(1) > .summary-content > .medium-size",
+      "targets": [
+        ["css=.summary-box:nth-child(1) > .summary-content > .medium-size", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'Persoana fizica')]", "xpath:innerText"]
+      ],
+      "value": "Persoana fizica"
+    }, {
+      "id": "0c27fe3b-c8be-44aa-bbff-4b93fa33dfae",
+      "comment": "Verificam Informatii facturare - Prenume Nume",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(1) > .summary-content span:nth-child(1)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) > .summary-content span:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Andrei Rusu')]", "xpath:innerText"]
+      ],
+      "value": "Andrei Rusu"
+    }, {
+      "id": "807b7ed0-f7e2-445a-816c-0ff1c684dba0",
+      "comment": "Verificam Informatii facturare - Telefon",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(1) span:nth-child(3)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span[3]", "xpath:idRelative"],
+        ["xpath=//span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'0740201852')]", "xpath:innerText"]
+      ],
+      "value": "0740201852"
+    }, {
+      "id": "9733e48f-ba39-4e87-b697-f2102162e96e",
+      "comment": "Verificam Informatii facturare - Adresa",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(1) .content",
+      "targets": [
+        ["css=.summary-box:nth-child(1) .content", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Str. Simion Barnutiu 55, Nr. 55, 700118, Iasi, Iaşi"
+    }, {
+      "id": "8beb1094-4011-4e0b-a45c-1bcf2e0a23aa",
+      "comment": "Verificam Informatii Livrare",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) .semibold",
+      "targets": [
+        ["css=.summary-box:nth-child(2) .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Informatii livrare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "425cf932-840c-47a8-9a68-d88274c012c3",
+      "comment": "Verificam Informatii facturare - Prenume Nume",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) > .summary-content span:nth-child(1)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) > .summary-content span:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Andrei Rusu')]", "xpath:innerText"]
+      ],
+      "value": "Andrei Rusu"
+    }, {
+      "id": "608dfa5f-373d-4d1c-918b-1d82d4ebd3e8",
+      "comment": "Verificam Informatii facturare - Telefon",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) span:nth-child(3)",
+      "targets": [
+        ["css=.summary-box:nth-child(1) span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div/span[3]", "xpath:idRelative"],
+        ["xpath=//span[3]", "xpath:position"],
+        ["xpath=//span[contains(.,'0740201852')]", "xpath:innerText"]
+      ],
+      "value": "0740201852"
+    }, {
+      "id": "a4e660f5-cf55-4d0f-b769-dd93e71d7ed4",
+      "comment": "Verificam Informatii facturare - Adresa",
+      "command": "verifyElementPresent",
+      "target": "css=.summary-box:nth-child(2) .content",
+      "targets": [
+        ["css=.summary-box:nth-child(1) .content", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/div[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]", "xpath:position"]
+      ],
+      "value": "Str. Simion Barnutiu 55, Nr. 55, 700118, Iasi, Iaşi"
+    }, {
+      "id": "587fd7d3-c164-4f6c-b2a5-4cd299b538ff",
+      "comment": "Verificam Metoda de livrare - Flota dedeman",
+      "command": "verifyText",
+      "target": "css=.method-name",
+      "targets": [
+        ["css=.method-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[3]/div[2]/div/div/span/span", "xpath:idRelative"],
+        ["xpath=//span/span", "xpath:position"]
+      ],
+      "value": "Livrare prin Flota Dedeman Standard"
+    }, {
+      "id": "b719f89c-4d83-4235-bd5f-86c29c6fdc78",
+      "comment": "Verificam ca e produsul selectat",
+      "command": "verifyText",
+      "target": "css=.product-row > .pull-left",
+      "targets": [
+        ["css=.product-row > .pull-left", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[3]/div[2]/div/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div", "xpath:position"]
+      ],
+      "value": "2 x Masuta cafea din sticla MC-01, asimetrica, neagra, 103 x 60 x 45.5 cm, 2C"
+    }, {
+      "id": "4958cecf-7c34-456e-8ad0-e0138bc6e254",
+      "comment": "Verificam Modalitatea de plata - Ramburs",
+      "command": "verifyText",
+      "target": "css=.payment-name",
+      "targets": [
+        ["css=.payment-name", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div[4]/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/div", "xpath:position"]
+      ],
+      "value": "Ramburs, la primirea coletului (numerar) + 5.99 lei"
+    }, {
+      "id": "88a9a2da-f028-456e-a801-06f116202a68",
+      "comment": "Verificam Subtotal ",
+      "command": "verifyText",
+      "target": "css=.subtotal > .pull-right > .bold",
+      "targets": [
+        ["css=.subtotal > .pull-right > .bold", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/div/div/div[2]/div[4]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'351.98')]", "xpath:innerText"]
+      ],
+      "value": "${z}"
+    }, {
+      "id": "18334183-25d9-4d97-8408-9cdcd3489ba3",
+      "comment": "Verificam Total",
+      "command": "verifyText",
+      "target": "css=.align-right > .bold:nth-child(1)",
+      "targets": [
+        ["css=.align-right > .bold:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/div/div[2]/div[2]/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div[2]/div[2]/span", "xpath:position"]
+      ],
+      "value": "${z}"
+    }, {
+      "id": "e4796789-f4bb-408f-aa7e-dc3eb2d526a3",
+      "comment": "Bifeaza - Prin plasarea comenzii...",
+      "command": "click",
+      "target": "id=policy-agree",
+      "targets": [
+        ["id=policy-agree", "id"],
+        ["css=#policy-agree", "css:finder"],
+        ["xpath=//input[@id='policy-agree']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/div[2]/div/span/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9a74b793-7595-49a6-b941-56284489abad",
+      "comment": "Click pe Trimite comanda",
+      "command": "click",
+      "target": "css=.orange-gradient > div",
+      "targets": [
+        ["css=.orange-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div[2]/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ea0dcaa2-542e-4bba-835e-2d5353e10dbd",
+      "comment": "Stocam variabila z de tip int",
+      "command": "executeScript",
+      "target": "return (parseInt(${z}))",
+      "targets": [],
+      "value": "zInt"
+    }, {
+      "id": "8e36355f-8fcc-4f22-a085-a6a98a91dfca",
+      "comment": "Verificam - Total valoare",
+      "command": "verifyText",
+      "target": "css=.success-total > span",
+      "targets": [
+        ["css=.success-total > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'351')]", "xpath:innerText"]
+      ],
+      "value": "${zInt}"
+    }, {
+      "id": "a4dbf34b-1945-46a1-b910-3d5d81685bbd",
+      "comment": "Detaliile comenzii se trimit pe email",
+      "command": "verifyElementPresent",
+      "target": "css=.orange-text",
+      "targets": [
+        ["css=.orange-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div[2]/div/div/div/div[2]/p", "xpath:idRelative"],
+        ["xpath=//div[2]/p", "xpath:position"],
+        ["xpath=//p[contains(.,'In scurt timp, vei primi un e-mail cu detaliile comenzii!')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bff769db-708b-493b-a3ac-dcce0713b3e5",
+      "comment": "Click pe - Cosul meu",
+      "command": "click",
+      "target": "css=.item-text",
+      "targets": [
+        ["css=.item-text", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div/div/div[3]/div/ul/li/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Cosul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "265182c9-40cd-4e37-b19f-e1d6b7adb268",
+      "comment": "Verificam ca Cosul este gol.",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Coșul este gol!')]",
+      "targets": [
+        ["css=.empty-cart-text > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Coșul este gol!')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "607b9d53-b40e-4354-a02d-23bc75d6911c",
+      "comment": "Inchidem fereastra",
+      "command": "close",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }]
   }],
-  "suites": [{
-    "id": "bf4e454c-00c7-46c2-a036-05eca72f97fd",
-    "name": "1. Login Test Suite",
-    "persistSession": false,
-    "parallel": true,
-    "timeout": 30,
-    "tests": []
-  }, {
-    "id": "8098b929-da95-4335-81b4-05e02bd2710b",
-    "name": "LIVE - Test Suite",
-    "persistSession": false,
-    "parallel": true,
-    "timeout": 300,
-    "tests": ["d23ba5af-6036-44d8-80e5-ee433375718f"]
-  }, {
-    "id": "53979692-84d6-41e2-8303-8881f5fe47ab",
-    "name": "2. Client logat - Adaugare produse in cos - Test Suite",
-    "persistSession": false,
-    "parallel": true,
-    "timeout": 300,
-    "tests": ["d23ba5af-6036-44d8-80e5-ee433375718f"]
-  }, {
-    "id": "822b4033-1d9f-461a-a175-24d3f3f06c85",
-    "name": "DEVEL - Test Suite",
-    "persistSession": false,
-    "parallel": true,
-    "timeout": 300,
-    "tests": []
-  }, {
-    "id": "693719c1-5668-4624-91cb-1135aeedc356",
-    "name": "STAGE - Test Suite",
-    "persistSession": false,
-    "parallel": true,
-    "timeout": 300,
-    "tests": []
-  }],
-  "urls": ["https://www.dedeman.ro/", "https://www.dedeman.ro/iasi3", "http://52.212.215.104/iasi2"],
+  "suites": [],
+  "urls": ["https://www.dedeman.ro/", "https://www.dedeman.ro/iasi3", "http://52.212.215.104/iasi2", "http://52.212.215.104/"],
   "plugins": []
 }
