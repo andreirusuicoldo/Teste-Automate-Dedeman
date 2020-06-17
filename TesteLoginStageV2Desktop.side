@@ -2,7 +2,7 @@
   "id": "6e791ad5-9cc4-417f-b38a-4c24a08bd4e9",
   "version": "2.0",
   "name": "TesteLoginStageV2Desktop",
-  "url": "http://34.253.12.48/iasi2",
+  "url": "http://34.253.12.48",
   "tests": [{
     "id": "6f1a75d9-b92c-41c7-ba39-436b7d89a74a",
     "name": "1. LIVE - Login cu user si pass valid",
@@ -10,7 +10,7 @@
       "id": "5c690717-878e-41c6-922c-008703eca71c",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://34.253.12.48/iasi2",
+      "target": "http://34.253.12.48",
       "targets": [],
       "value": ""
     }, {
@@ -42,6 +42,91 @@
         ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
         ["xpath=//a/div", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "7d3adc3a-b74b-45be-aa92-5fb769cb48c9",
+      "comment": "Verificam daca apare popup cu Localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "f129dd2a-8f43-46e2-86d0-c38a448f9f52",
+      "comment": "Daca popup-ul cu Localitate apare",
+      "command": "if",
+      "target": "${x}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7acdd82f-e809-409b-87d8-ef00a6eeb610",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3c146877-9eb2-4f81-a484-1721ad434b08",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "a619773b-7699-44c9-99e5-cf4dd3092d06",
+      "comment": "Selectam Iasi",
+      "command": "clickAt",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d9c8fcea-f625-472f-a6eb-a761d9aa0456",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "be189a26-202c-447a-b9ad-781c8a5c0dc0",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "3bab474d-d057-47c3-81d8-e107fa9f7d87",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1a3c5185-3102-46c6-aee1-651f24a40db7",
+      "comment": "Click pe Iasi Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "73f86c0d-5c29-4990-8d7b-1300dbb79a20",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "40cddd40-3f47-481a-928a-9fd42e6b0444",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "91c2c381-e7b5-4568-b939-feaf340177f8",
@@ -162,7 +247,7 @@
       "id": "df39d4ac-c58c-49ad-b914-60324a00c1cc",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://34.253.12.48/iasi2",
+      "target": "http://34.253.12.48",
       "targets": [],
       "value": ""
     }, {
@@ -194,6 +279,91 @@
         ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
         ["xpath=//a/div", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "cf65d030-74ce-417a-a095-2c5808265cdc",
+      "comment": "Verificam daca apare popup cu Localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "0d8cef64-4690-415c-be03-b8c494a677d8",
+      "comment": "Daca popup-ul cu Localitate apare",
+      "command": "if",
+      "target": "${x}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc126545-cfea-497a-9f8d-031086ba8bde",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "980c2786-99b3-4429-bdc1-5d18368f6f9c",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "35b9435e-27c4-40d4-b721-2b82c3482b30",
+      "comment": "Selectam Iasi",
+      "command": "clickAt",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56a645aa-aa52-41b0-8c9f-613e92be91dd",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f5b2f840-4ee4-4477-90c5-d1425336cb3a",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "7dbf5f62-b69a-43ba-b841-1154b16b9fae",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86f283d1-54ab-4429-b678-90143eae0582",
+      "comment": "Click pe Iasi Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "25c6e4a6-9669-4d08-8659-c3d49e6f4d4f",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d0514a57-4fb0-4664-b6a4-f9cce824e1d8",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "5b4e32ab-e958-4bde-ad72-c90628923a91",
@@ -290,7 +460,7 @@
       "id": "72d1ed48-c1cf-4845-bc60-74d77286602a",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://34.253.12.48/iasi2",
+      "target": "http://34.253.12.48",
       "targets": [],
       "value": ""
     }, {
@@ -322,6 +492,91 @@
         ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
         ["xpath=//a/div", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "20f23dda-79bd-4979-9aeb-06bd047a6b30",
+      "comment": "Verificam daca apare popup cu Localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "be16669e-90a1-44c0-bcc0-57d09ad4fdec",
+      "comment": "Daca popup-ul cu Localitate apare",
+      "command": "if",
+      "target": "${x}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "faf32ed3-2078-43b3-8cff-e377138ee2f3",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7e34df2-059b-4679-9f51-9ff021789d28",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "f6ca8458-3e04-47d6-892f-f219b38ffd46",
+      "comment": "Selectam Iasi",
+      "command": "clickAt",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "db988324-c3aa-4567-b59a-9996405f23e5",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ee139145-6d36-499b-b8b9-a31fe33c0973",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "bd10e2eb-acc0-4376-a74f-c930ba09220b",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5f445d0c-084a-42de-94a4-0b8f68ee60e4",
+      "comment": "Click pe Iasi Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "45356994-68c8-4a7d-9d47-fe0eddfd21c7",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "20651822-e61b-4710-ba6b-f124381ab168",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "17a76144-9cea-44b5-a39c-8515ab3e9ccc",
@@ -418,7 +673,7 @@
       "id": "61aebe0f-c731-431f-981d-eaf48cdd56a2",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://34.253.12.48/iasi2",
+      "target": "http://34.253.12.48",
       "targets": [],
       "value": ""
     }, {
@@ -450,6 +705,91 @@
         ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
         ["xpath=//a/div", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "b9585bd5-c676-4edb-8306-f988150e6887",
+      "comment": "Verificam daca apare popup cu Localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "31a525bc-22da-4556-92a7-0532d29fe955",
+      "comment": "Daca popup-ul cu Localitate apare",
+      "command": "if",
+      "target": "${x}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "74a32e8e-ff32-43e4-85c4-d1790976ade9",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bdcc3d6a-178c-4b60-87f4-f3a1c62701d0",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "f03f3fbc-ba5e-4c26-abb7-bf90004e7e10",
+      "comment": "Selectam Iasi",
+      "command": "clickAt",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3372f560-863b-40fc-874f-d2a5985af142",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "088eec43-38a5-4166-8778-6f000bec44b8",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "335d5800-2489-424b-a32a-12165d2077fb",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6a887947-6faa-41a9-be18-f711907a3606",
+      "comment": "Click pe Iasi Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "db0e4988-aad0-4f3a-bd6d-42f7252f9ec4",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02e83fa3-2bfb-4ab3-b325-5985c40ef25d",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "c1a8a0f8-374e-4fa4-aafb-e152b7a84342",
@@ -542,7 +882,7 @@
       "id": "80f37dff-592e-49a7-bba2-c501cf7bb05e",
       "comment": "Deschidem pagina Dedeman Iasi",
       "command": "open",
-      "target": "http://34.253.12.48/iasi2",
+      "target": "http://34.253.12.48",
       "targets": [],
       "value": ""
     }, {
@@ -574,6 +914,91 @@
         ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
         ["xpath=//a/div", "xpath:position"]
       ],
+      "value": ""
+    }, {
+      "id": "ea7bf440-5756-4fda-8ab9-1aa9e1bab380",
+      "comment": "Verificam daca apare popup cu Localitate",
+      "command": "storeXpathCount",
+      "target": "xpath=//h3[contains(.,'Selecteaza-ti localitatea pentru a putea comanda produse pentru casa si gradina ta')]",
+      "targets": [],
+      "value": "x"
+    }, {
+      "id": "615611ac-5d70-411a-91fd-d20a2e7b322c",
+      "comment": "Daca popup-ul cu Localitate apare",
+      "command": "if",
+      "target": "${x}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4644ff3c-ecc3-4157-8126-0af66c6abd48",
+      "comment": "Click pe Judet",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d12be0a5-d5a3-4bf6-8f51-53b4147078eb",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "4b29bde6-d9cf-47c0-b191-ce7f4f852dfc",
+      "comment": "Selectam Iasi",
+      "command": "clickAt",
+      "target": "xpath=//div/ul/li[contains(.,'Iaşi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76e679dd-7569-4ed6-a7b9-2c5c2973293b",
+      "comment": "Click pe Localitate",
+      "command": "click",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c7318461-63fe-4968-bc52-30af50912577",
+      "comment": "Cautare dupa Iasi",
+      "command": "type",
+      "target": "xpath=(//input[@value=''])[2]",
+      "targets": [],
+      "value": "Iasi"
+    }, {
+      "id": "9a69a9e7-e853-4e40-914e-9dabba980b9a",
+      "comment": "Selectam Iasi",
+      "command": "click",
+      "target": "xpath=//div/ul/li[contains(.,'Iasi')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a84c2b33-6ba1-4c5a-93e8-d9744d11d82e",
+      "comment": "Click pe Iasi Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d6b7b6f-bba8-4277-ac17-4fda572463db",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6cbc7f53-7d43-49f0-933f-cff142c6fb25",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
       "value": ""
     }, {
       "id": "68c3d010-26a9-4267-a548-b6e8a2457012",
@@ -610,6 +1035,13 @@
         ["xpath=//form/button/div", "xpath:position"]
       ],
       "value": ""
+    }, {
+      "id": "53198521-9be3-4bbb-8211-d4b5f9937e07",
+      "comment": "Wait - este afisat mesajul: Introduceti adresa dumneavoastra de email",
+      "command": "waitForElementVisible",
+      "target": "css=.error .info-box-content",
+      "targets": [],
+      "value": "30000"
     }, {
       "id": "8eefedf7-33e9-406d-aa23-486f51f27211",
       "comment": "Verificam ca este afisat mesajul: Introduceti adresa dumneavoastra de email",
@@ -668,6 +1100,6 @@
     "timeout": 30,
     "tests": ["6f1a75d9-b92c-41c7-ba39-436b7d89a74a"]
   }],
-  "urls": ["https://www.dedeman.ro/", "https://www.dedeman.ro/iasi3", "http://52.212.215.104/iasi2", "http://34.253.12.48/iasi2"],
+  "urls": ["https://www.dedeman.ro/", "https://www.dedeman.ro/iasi3", "http://52.212.215.104/iasi2", "http://34.253.12.48/iasi2", "http://34.253.12.48/"],
   "plugins": []
 }
