@@ -118,6 +118,13 @@
       ],
       "value": ""
     }, {
+      "id": "7da2a5a4-56ae-42d3-9a34-8d51d7435518",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "da9236d8-e2c1-40b7-90fd-d4f064a6d693",
       "comment": "Wait - Cosul meu",
       "command": "waitForElementVisible",
@@ -129,13 +136,6 @@
       "comment": "Click pe Cosul meu",
       "command": "click",
       "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
-      "targets": [],
-      "value": ""
-    }, {
-      "id": "7da2a5a4-56ae-42d3-9a34-8d51d7435518",
-      "comment": "END If",
-      "command": "end",
-      "target": "",
       "targets": [],
       "value": ""
     }, {
@@ -1219,6 +1219,20 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "9a999c03-4565-4669-8368-f19f6373d7d5",
+      "comment": "Wait - Cosul meu",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "8768fbd0-cbcf-4777-9b83-acf4d4baeeb4",
+      "comment": "Click pe Cosul meu",
+      "command": "click",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "0aa90168-d552-4c0d-88c1-a43e7b484af8",
       "comment": "Stocam o variabila pentru Localitate",
       "command": "storeXpathCount",
@@ -1312,6 +1326,209 @@
       "value": ""
     }, {
       "id": "2a25ebce-3a81-4f51-9418-598c5a0838c3",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff7ce562-ccaa-40aa-9605-00ba9e44a018",
+      "comment": "Wait - Cosul meu",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "61a0af15-ccd9-4fdc-930e-ad25b94864ba",
+      "comment": "Click pe Cosul meu",
+      "command": "click",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1bca5b19-4728-48d6-8110-58a79e840c7c",
+      "comment": "Wait - Cos de cumparaturi",
+      "command": "waitForText",
+      "target": "linkText=Cos de cumparaturi",
+      "targets": [
+        ["linkText=Cos de cumparaturi", "linkText"],
+        ["css=.active > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Cos de cumparaturi')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[3]/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cos de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": "Cos de cumparaturi"
+    }, {
+      "id": "b0edc344-6354-4770-a3a7-987b5d8fb8e4",
+      "comment": "Verificam daca Cosul este gol",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/h2[contains(text(),'Coșul este gol!')]",
+      "targets": [],
+      "value": "cosulEsteGol"
+    }, {
+      "id": "8ac17270-af40-4d11-a315-9f1fe8ce9cd6",
+      "comment": "Daca exista produse in cos",
+      "command": "if",
+      "target": "${cosulEsteGol}<1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c8ec2be4-a135-4cbd-9633-cf4ba06e1b7b",
+      "comment": "Stocam numar produse cos - nrProduseCos1",
+      "command": "storeText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "nrProduseCos1"
+    }, {
+      "id": "8c15385d-6277-4c71-97f5-13c8cfee5849",
+      "comment": "Script - int nrProduseCos",
+      "command": "executeScript",
+      "target": "return parseInt(${nrProduseCos1})",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "c46ffc3f-bec9-4651-9b41-74b9b4e36951",
+      "comment": "While - nrProduseCos > 1",
+      "command": "while",
+      "target": "${nrProduseCos} > 1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "77e78a6c-acef-4b90-8f64-50c376ec0973",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "26474a57-ab49-4ef9-8b68-340d6cb113a5",
+      "comment": "Script - nrProduseCos--1",
+      "command": "executeScript",
+      "target": "return ${nrProduseCos}-1",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "c4f2e67d-bfd4-45a4-af4a-cf35a0661f5d",
+      "comment": "Wait - Numar produse",
+      "command": "waitForText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "${nrProduseCos}"
+    }, {
+      "id": "5adf2c09-4e33-49ac-8c77-6b9f38de6c54",
+      "comment": "END While",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "10e7545b-cbed-41e9-adfe-1ef342f03eec",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a694dd84-ae5e-4231-a166-592b865cf874",
+      "comment": "Wait - Cosul este gol!",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Coșul este gol!')]",
+      "targets": [
+        ["css=.empty-cart-text > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Coșul este gol!')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "3ef7e7e5-e464-4298-9fb0-3678d1f6c0d5",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "86c47aec-8dec-47b5-90e5-a0283d476441",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b28e6840-72cb-40aa-ae7d-d72f459afd47",
+      "comment": "Verificam daca este logat un user",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/div/p[contains(text(),'Buna ziua,')]",
+      "targets": [],
+      "value": "userLogat"
+    }, {
+      "id": "377d3cbe-6d43-45fe-b53b-c9d4a41a2626",
+      "comment": "Daca un user e deja logat",
+      "command": "if",
+      "target": "${userLogat}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d622c2db-1ca2-4714-96b1-90721502a328",
+      "comment": "Click pe Delogare",
+      "command": "click",
+      "target": "linkText=Delogare",
+      "targets": [
+        ["linkText=Delogare", "linkText"],
+        ["css=.logout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Delogare')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delogare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "99788ff1-7f7f-49f0-a555-df851c9a7427",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Contul meu')]",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb1cab83-7b23-4d4b-8846-447448142dcf",
+      "comment": "Verificam ca userul nu e logat",
+      "command": "waitForText",
+      "target": "css=.dropdown-section",
+      "targets": [],
+      "value": "Momentan, nu esti autentificat"
+    }, {
+      "id": "1e000c4f-e0db-4b0f-9533-a452ed76fb8e",
       "comment": "END If",
       "command": "end",
       "target": "",
@@ -1978,6 +2195,18 @@
       "targets": [],
       "value": "${pret}"
     }, {
+      "id": "fa67e10c-4eb8-475a-a339-b76672bab594",
+      "comment": "Wait - Pasul urmator",
+      "command": "waitForElementPresent",
+      "target": "xpath=//button[contains(.,'Pasul urmator ›')]",
+      "targets": [
+        ["css=.subtotal-wrap > .full-width", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Pasul urmator ›')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
       "id": "474ef802-6e83-4247-ae19-73c5564fe90f",
       "comment": "Click pe Pasul urmator",
       "command": "click",
@@ -2151,34 +2380,18 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "f0f0abd8-1e68-4380-8c1e-185f6b44ff2a",
-      "comment": "Click pe Contul meu",
-      "command": "click",
-      "target": "css=li:nth-child(2) > .semibold",
-      "targets": [
-        ["css=li:nth-child(2) > .semibold", "css:finder"],
-        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
-        ["xpath=//li[2]/span", "xpath:position"],
-        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "7ac57cf7-ccf5-45a8-8edb-b75aac9a3e0d",
-      "comment": "Wait - Click pe Autentifica-te",
+      "id": "8f1e1bc2-a521-4c8c-8b0a-b0a64326c976",
+      "comment": "Wait - Cosul meu",
       "command": "waitForElementVisible",
-      "target": "xpath=//a/div[contains(.,'Autentifica-te')]",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
       "targets": [],
       "value": "30000"
     }, {
-      "id": "70ad4139-33e1-4e1a-9cd2-867b6679d417",
-      "comment": "Click pe Autentifica-te",
+      "id": "ca78d024-b1be-400f-b0b3-b24db4836b8a",
+      "comment": "Click pe Cosul meu",
       "command": "click",
-      "target": "xpath=//a/div[contains(.,'Autentifica-te')]",
-      "targets": [
-        ["css=.blue-gradient > div", "css:finder"],
-        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
-        ["xpath=//a/div", "xpath:position"]
-      ],
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
       "value": ""
     }, {
       "id": "e07938d3-2568-4d6d-87b1-a0ece4ba4b2a",
@@ -2286,6 +2499,220 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "3f193463-e27e-4d77-b5ea-df83980fdd7d",
+      "comment": "Wait - Cosul meu",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "021f9715-55a4-46c2-8c36-45ecccf9c045",
+      "comment": "Click pe Cosul meu",
+      "command": "click",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d61b06b3-ee4e-4c34-9d32-e8dfa74912c6",
+      "comment": "Wait - Cos de cumparaturi",
+      "command": "waitForText",
+      "target": "linkText=Cos de cumparaturi",
+      "targets": [
+        ["linkText=Cos de cumparaturi", "linkText"],
+        ["css=.active > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Cos de cumparaturi')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[3]/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cos de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": "Cos de cumparaturi"
+    }, {
+      "id": "39d0b75e-0fa5-40a7-85b7-161eee401fd0",
+      "comment": "Verificam daca Cosul este gol",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/h2[contains(text(),'Coșul este gol!')]",
+      "targets": [],
+      "value": "cosulEsteGol"
+    }, {
+      "id": "113cf076-4cbf-44b8-9315-8b28e0084e1d",
+      "comment": "Daca exista produse in cos",
+      "command": "if",
+      "target": "${cosulEsteGol}<1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de97c024-614a-400a-aac3-aff9442e8f2a",
+      "comment": "Stocam numar produse cos - nrProduseCos1",
+      "command": "storeText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "nrProduseCos1"
+    }, {
+      "id": "43a47824-48ca-43ff-aa7f-6bc7501d4e60",
+      "comment": "Script - int nrProduseCos",
+      "command": "executeScript",
+      "target": "return parseInt(${nrProduseCos1})",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "632e3df8-a95b-4a27-bec4-67195f7b0058",
+      "comment": "While - nrProduseCos > 1",
+      "command": "while",
+      "target": "${nrProduseCos} > 1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "062690b4-3c90-42f1-adb1-cb0e199e1a31",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fd9a945b-9ff0-4f9c-9cd7-c91c8df9fb22",
+      "comment": "Script - nrProduseCos--1",
+      "command": "executeScript",
+      "target": "return ${nrProduseCos}-1",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "5cfc54cd-5fee-49ac-a589-485cee13620a",
+      "comment": "Wait - Numar produse",
+      "command": "waitForText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "${nrProduseCos}"
+    }, {
+      "id": "11be62d5-c2ea-4ab4-b7bb-dbc128177268",
+      "comment": "END While",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95c2a7f9-ea6f-49ec-8617-5688246341b7",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0c100257-922f-489a-92cd-120d533df36b",
+      "comment": "Wait - Cosul este gol!",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Coșul este gol!')]",
+      "targets": [
+        ["css=.empty-cart-text > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Coșul este gol!')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "a0fd5d69-9e88-433c-86a1-4db3dba7bf97",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bab5e764-0c99-4807-8cf5-7ea22705df7a",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a74f0010-b55a-43bd-bd1e-cb36d7316be1",
+      "comment": "Verificam daca este logat un user",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/div/p[contains(text(),'Buna ziua,')]",
+      "targets": [],
+      "value": "userLogat"
+    }, {
+      "id": "bfa838e5-7581-4e6c-89cb-a733d1723351",
+      "comment": "Daca un user e deja logat",
+      "command": "if",
+      "target": "${userLogat}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50a675fd-dc5a-44b3-8db3-34d1d2ced562",
+      "comment": "Click pe Delogare",
+      "command": "click",
+      "target": "linkText=Delogare",
+      "targets": [
+        ["linkText=Delogare", "linkText"],
+        ["css=.logout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Delogare')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delogare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "de7f318f-137f-4f33-a995-d45274db3542",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Contul meu')]",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0a020e2e-e80c-4b73-9e28-7dfe82a9da02",
+      "comment": "Verificam ca userul nu e logat",
+      "command": "waitForText",
+      "target": "css=.dropdown-section",
+      "targets": [],
+      "value": "Momentan, nu esti autentificat"
+    }, {
+      "id": "fad1f235-d991-4013-96e6-2990cd10bf57",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "680b7d97-f565-4710-8715-52452c1d7106",
+      "comment": "Click pe Autentifica-te",
+      "command": "click",
+      "target": "xpath=//a/div[contains(.,'Autentifica-te')]",
+      "targets": [
+        ["css=.blue-gradient > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[2]/a/div", "xpath:idRelative"],
+        ["xpath=//a/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "d12a2bb5-d53a-4ed7-b5bb-4737007d7c69",
       "comment": "Wait - Contul Clientului",
       "command": "waitForElementVisible",
@@ -2372,7 +2799,7 @@
       "value": "Test Test"
     }, {
       "id": "73d58768-4046-45d1-87ef-7a11dec1cdce",
-      "comment": "Verificam daca userul Rusu Andrei e logat cu succes",
+      "comment": "Verificam daca userul Test Test e logat cu succes",
       "command": "assertElementPresent",
       "target": "xpath=//p[contains(.,'Test Test')]",
       "targets": [
@@ -2382,6 +2809,143 @@
         ["xpath=//p[contains(.,'Rusu Andrei')]", "xpath:innerText"]
       ],
       "value": "Test Test"
+    }, {
+      "id": "6df5aa89-9966-4812-96d9-844f00c367bd",
+      "comment": "Wait - Cosul meu",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "1e14e56b-9069-4969-bbdb-ca1fe8e14248",
+      "comment": "Click pe Cosul meu",
+      "command": "click",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f611cdac-5df0-4e54-a716-cfaa78fb3091",
+      "comment": "Wait - Cos de cumparaturi",
+      "command": "waitForElementVisible",
+      "target": "linkText=Cos de cumparaturi",
+      "targets": [
+        ["linkText=Cos de cumparaturi", "linkText"],
+        ["css=.active > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Cos de cumparaturi')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[3]/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cos de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "4fdb54b2-b230-4915-a294-41b328ab3300",
+      "comment": "Verificam daca Cosul este gol",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/h2[contains(text(),'Coșul este gol!')]",
+      "targets": [],
+      "value": "cosulEsteGol"
+    }, {
+      "id": "61f0862d-591d-4a36-a13e-63cd3c2b4db9",
+      "comment": "Daca exista produse in cos",
+      "command": "if",
+      "target": "${cosulEsteGol}<1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70112c59-01df-4911-b7d4-d7572931d873",
+      "comment": "Stocam numar produse cos - nrProduseCos1",
+      "command": "storeText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "nrProduseCos1"
+    }, {
+      "id": "2cf87cc6-d395-4b85-9b18-8a951a006153",
+      "comment": "Script - int nrProduseCos",
+      "command": "executeScript",
+      "target": "return parseInt(${nrProduseCos1})",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "49c64c27-cca9-4e33-89d9-866646578b14",
+      "comment": "While - nrProduseCos > 1",
+      "command": "while",
+      "target": "${nrProduseCos} > 1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "91a3d5aa-b5a4-496f-8a21-b003c008d315",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a554c128-bd73-4b36-b45f-e25ee1d20e47",
+      "comment": "Script - nrProduseCos--1",
+      "command": "executeScript",
+      "target": "return ${nrProduseCos}-1",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "b7533144-d7de-488f-89f1-c9cbca0162ed",
+      "comment": "Wait - Numar produse",
+      "command": "waitForText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "${nrProduseCos}"
+    }, {
+      "id": "1a6a2222-7ba9-4f7e-bd0c-d0784dd5a279",
+      "comment": "END While",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2fd292c5-9ee3-4e5b-9489-70bed49ff08a",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "279c4756-f79c-43c7-86cb-0ab2997f8735",
+      "comment": "Wait - Cosul este gol!",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Coșul este gol!')]",
+      "targets": [
+        ["css=.empty-cart-text > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Coșul este gol!')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "492cc8c9-019f-4aa6-9883-ea65a243cb83",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
     }, {
       "id": "e37e2849-a24a-4d2d-8a30-ae41f1f82834",
       "comment": "Wait - Toate Departamentele",
@@ -3337,6 +3901,20 @@
       "targets": [],
       "value": ""
     }, {
+      "id": "9f26a1c9-4d26-475a-879a-89d66374bd34",
+      "comment": "Wait - Cosul meu",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "a013e880-8d69-437f-b536-da1eb457182a",
+      "comment": "Click pe Cosul meu",
+      "command": "click",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": ""
+    }, {
       "id": "3a1b8798-9578-4d34-b07d-7502b78e9185",
       "comment": "Stocam o variabila pentru Localitate",
       "command": "storeXpathCount",
@@ -3436,7 +4014,232 @@
       ],
       "value": ""
     }, {
+      "id": "06ae8a6e-8735-4e41-84b7-0816337502f8",
+      "comment": "Click pe Iasi 2 - Valea Lupului",
+      "command": "click",
+      "target": "css=.delivery-row:nth-child(2) .left",
+      "targets": [
+        ["css=.delivery-row:nth-child(2) .left", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/div[3]/div/div[2]/div/label/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/label/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a0b1a736-79fb-46cc-9b9c-144b5af2a07e",
+      "comment": "Click pe Continua cumparaturile",
+      "command": "click",
+      "target": "css=.orange > div",
+      "targets": [
+        ["css=.orange > div", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div[3]/div/div/button/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div/div/button/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
       "id": "8ff2cee7-ed7b-4bc1-b752-f3e9e64bfad7",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bdc3ffbd-ac52-4e02-801a-42befb4b97f3",
+      "comment": "Wait - Cosul meu",
+      "command": "waitForElementVisible",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "002658ac-0624-4def-8eb9-6c9d3c82aa4e",
+      "comment": "Click pe Cosul meu",
+      "command": "click",
+      "target": "xpath=//*/a/span/span[contains(text(),'Cosul meu')]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "95b1acf0-628f-4799-9845-f01f4088919e",
+      "comment": "Wait - Cos de cumparaturi",
+      "command": "waitForText",
+      "target": "linkText=Cos de cumparaturi",
+      "targets": [
+        ["linkText=Cos de cumparaturi", "linkText"],
+        ["css=.active > a", "css:finder"],
+        ["xpath=//a[contains(text(),'Cos de cumparaturi')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[3]/div/ul/li[2]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/div/ul/li[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Cos de cumparaturi')]", "xpath:innerText"]
+      ],
+      "value": "Cos de cumparaturi"
+    }, {
+      "id": "29f85ef2-a9fc-4540-ad83-f0987fac7114",
+      "comment": "Verificam daca Cosul este gol",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/h2[contains(text(),'Coșul este gol!')]",
+      "targets": [],
+      "value": "cosulEsteGol"
+    }, {
+      "id": "a4322ed6-c6f5-41a5-b857-a7aab68c2515",
+      "comment": "Daca exista produse in cos",
+      "command": "if",
+      "target": "${cosulEsteGol}<1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f421ba7f-2057-49c8-acf3-4a564dd06215",
+      "comment": "Stocam numar produse cos - nrProduseCos1",
+      "command": "storeText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "nrProduseCos1"
+    }, {
+      "id": "7db9a53e-bb99-4f12-ae49-834444c926e1",
+      "comment": "Script - int nrProduseCos",
+      "command": "executeScript",
+      "target": "return parseInt(${nrProduseCos1})",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "c4b54bff-d68a-47f9-90ea-b2c001f8cbc6",
+      "comment": "While - nrProduseCos > 1",
+      "command": "while",
+      "target": "${nrProduseCos} > 1",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4421c75-f851-48a3-b7a2-1b114548d18a",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1572b87c-94cd-46da-bcfb-d9a7183dd6a1",
+      "comment": "Script - nrProduseCos--1",
+      "command": "executeScript",
+      "target": "return ${nrProduseCos}-1",
+      "targets": [],
+      "value": "nrProduseCos"
+    }, {
+      "id": "6de114d9-2ffa-4cf9-995b-29b5fdd9e4dd",
+      "comment": "Wait - Numar produse",
+      "command": "waitForText",
+      "target": "css=.icon-cart > span",
+      "targets": [
+        ["css=.icon-cart > span", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[3]/a/i/span", "xpath:idRelative"],
+        ["xpath=//i/span", "xpath:position"],
+        ["xpath=//span[contains(.,'1')]", "xpath:innerText"]
+      ],
+      "value": "${nrProduseCos}"
+    }, {
+      "id": "fdcafaad-43e1-4cd6-83b6-be026f639766",
+      "comment": "END While",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "80e326b8-4f34-44b3-a2fd-94745c159482",
+      "comment": "Click - Sterge",
+      "command": "click",
+      "target": "xpath=//li[contains(.,'Sterge')]",
+      "targets": [
+        ["css=.table:nth-child(3) .table-row:nth-child(1) li:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div[2]/div[2]/div[2]/div/div/span/ul/li", "xpath:idRelative"],
+        ["xpath=//span/ul/li", "xpath:position"],
+        ["xpath=//li[contains(.,'Sterge')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b312c7fe-646f-4373-83d0-7426a40949e9",
+      "comment": "Wait - Cosul este gol!",
+      "command": "waitForElementVisible",
+      "target": "xpath=//h2[contains(.,'Coșul este gol!')]",
+      "targets": [
+        ["css=.empty-cart-text > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[3]/div[2]/div/div[2]/div/h2", "xpath:idRelative"],
+        ["xpath=//div[2]/div/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Coșul este gol!')]", "xpath:innerText"]
+      ],
+      "value": "30000"
+    }, {
+      "id": "f720f7f4-056d-4552-9034-b84a11bec251",
+      "comment": "END If",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75d4da00-4670-422b-a6e0-b8c5b1344684",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "css=li:nth-child(2) > .semibold",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "360bc039-54f5-41be-a2fc-71b29ec28381",
+      "comment": "Verificam daca este logat un user",
+      "command": "storeXpathCount",
+      "target": "xpath=//*/div/div/p[contains(text(),'Buna ziua,')]",
+      "targets": [],
+      "value": "userLogat"
+    }, {
+      "id": "6f21bc83-3e11-48bf-b343-87078319ceee",
+      "comment": "Daca un user e deja logat",
+      "command": "if",
+      "target": "${userLogat}>0",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2b482765-223c-4336-8312-d051d59c4a16",
+      "comment": "Click pe Delogare",
+      "command": "click",
+      "target": "linkText=Delogare",
+      "targets": [
+        ["linkText=Delogare", "linkText"],
+        ["css=.logout-button", "css:finder"],
+        ["xpath=//a[contains(text(),'Delogare')]", "xpath:link"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/div/div[3]/a", "xpath:idRelative"],
+        ["xpath=//div[3]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Delogare')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b4e3b5f-ff37-434f-a89b-a25cc02535d9",
+      "comment": "Click pe Contul meu",
+      "command": "click",
+      "target": "xpath=//span[contains(.,'Contul meu')]",
+      "targets": [
+        ["css=li:nth-child(2) > .semibold", "css:finder"],
+        ["xpath=//div[@id='app']/div/div[2]/div/div/div[2]/div[2]/div[2]/ul/li[2]/span", "xpath:idRelative"],
+        ["xpath=//li[2]/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Contul meu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "61d0f4f6-06d1-446a-8a85-6b9b7e326268",
+      "comment": "Verificam ca userul nu e logat",
+      "command": "waitForText",
+      "target": "css=.dropdown-section",
+      "targets": [],
+      "value": "Momentan, nu esti autentificat"
+    }, {
+      "id": "a64e39ae-ea89-45d8-8d49-91cb1c082c53",
       "comment": "END If",
       "command": "end",
       "target": "",
