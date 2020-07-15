@@ -988,20 +988,20 @@
       "id": "d156dfe5-28ec-412a-a398-0121c4bc3aaf",
       "comment": "Bifam Ridicare din magazinul Dedeman Iasi",
       "command": "click",
-      "target": "id=address-135094",
+      "target": "xpath=//*/input[@value=\"flatrate_flatrate\"]",
       "targets": [
-        ["id=address-135094", "id"],
-        ["css=#address-135094", "css:finder"],
-        ["xpath=//input[@id='address-135094']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/input", "xpath:position"]
+        ["id=address-135622", "id"],
+        ["css=#address-135622", "css:finder"],
+        ["xpath=//input[@id='address-135622']", "xpath:attributes"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div[5]/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[5]/div/div/input", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "11648654-48f3-48c5-8726-8d8d12f9538e",
       "comment": "Verificam ca optiunea selectata e Gratuita",
       "command": "assertText",
-      "target": "xpath=//p[contains(.,'Gratuit')]",
+      "target": "xpath=//*/div/p[contains(.,'Rezervare in magazinul Dedeman')]/../../../div/p",
       "targets": [
         ["css=.delivery-row:nth-child(2) .right > .semibold", "css:finder"],
         ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div[2]/div/label/div/div[2]/p", "xpath:idRelative"],
@@ -2617,7 +2617,7 @@
       "id": "292da1f3-e1ce-4e0b-bc6b-af5493c6a906",
       "comment": "Bifam Ridicare din magazinul Dedeman Iasi",
       "command": "click",
-      "target": "id=address-135103",
+      "target": "xpath=//*/input[@value=\"flatrate_flatrate\"]",
       "targets": [
         ["id=address-135103", "id"],
         ["css=#address-135103", "css:finder"],
@@ -2630,7 +2630,7 @@
       "id": "c998f672-8b70-42d7-9990-2b72c48cca53",
       "comment": "Verificam ca optiunea selectata e Gratuita",
       "command": "assertText",
-      "target": "xpath=//p[contains(.,'Gratuit')]",
+      "target": "xpath=//*/div/p[contains(.,'Rezervare in magazinul Dedeman')]/../../../div/p",
       "targets": [
         ["css=.delivery-row:nth-child(2) .right > .semibold", "css:finder"],
         ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div[2]/div/label/div/div[2]/p", "xpath:idRelative"],
@@ -4156,7 +4156,7 @@
       "id": "c0d6260b-6b76-4fee-b043-901b54f48125",
       "comment": "Verificam ca optiunea selectata e 30 lei",
       "command": "assertText",
-      "target": "xpath=//span[contains(.,'30.00')]",
+      "target": "xpath=//*/div/p[contains(.,'Flota Dedeman')]/../../../div/p/span",
       "targets": [
         ["css=.semibold > .bold", "css:finder"],
         ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]/p/span", "xpath:idRelative"],
@@ -4168,7 +4168,7 @@
       "id": "cbbd5fec-68f6-4b3a-b7fb-c98271a6be96",
       "comment": "Stocam variabila transport - t",
       "command": "storeText",
-      "target": "css=.semibold > .bold",
+      "target": "xpath=//*/div/p[contains(.,'Flota Dedeman')]/../../../div/p/span",
       "targets": [
         ["css=.semibold > .bold", "css:finder"],
         ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]/p/span", "xpath:idRelative"],
@@ -5743,20 +5743,18 @@
       "id": "4565f38b-3107-45bf-ae08-258358d7f7da",
       "comment": "Bifam - Nemo curier",
       "command": "click",
-      "target": "id=address-135085",
+      "target": "xpath=//*/input[@value=\"nemocourier_nemocourier\"]",
       "targets": [
-        ["id=address-135085", "id"],
-        ["css=#address-135085", "css:finder"],
-        ["xpath=//input[@id='address-135085']", "xpath:attributes"],
-        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div[2]/div/div/input", "xpath:idRelative"],
-        ["xpath=//div[2]/div/div/input", "xpath:position"]
+        ["css=.delivery-row:nth-child(4) .bullet", "css:finder"],
+        ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div[4]/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[4]/div/div/span", "xpath:position"]
       ],
       "value": ""
     }, {
       "id": "8e88523b-93ba-4888-bb13-cb572997da3c",
       "comment": "Verificam ca optiunea selectata e Gratuita",
       "command": "assertText",
-      "target": "xpath=//p[contains(.,'Gratuit')]",
+      "target": "xpath=//*/div/p[contains(.,'Nemo')]/../../../div/p",
       "targets": [
         ["css=.delivery-row:nth-child(1) .right > .semibold", "css:finder"],
         ["xpath=//div[@id='app']/div[3]/div/div/div/div/div/div/div/label/div/div[2]/p", "xpath:idRelative"],
