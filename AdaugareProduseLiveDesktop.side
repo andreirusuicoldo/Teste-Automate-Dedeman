@@ -704,7 +704,7 @@
       "id": "d8eff72e-7b84-483e-922a-9c10520edf7f",
       "comment": "Stocam variabila pret - pret1",
       "command": "storeText",
-      "target": "css=.product-price",
+      "target": "xpath=//*/div/a[contains(@title,'Masuta cafea din sticla')]/../div/div/div[contains(@class,'product-price')]",
       "targets": [],
       "value": "pret1"
     }, {
@@ -1886,7 +1886,7 @@
       "id": "84ca432b-2dd5-45be-9e56-81ecf4cfe39c",
       "comment": "Stocam variabila pret - pret1",
       "command": "storeText",
-      "target": "css=.product-price ",
+      "target": "xpath=//*/div/a[contains(@title,'Masuta cafea din sticla')]/../div/div/div[contains(@class,'product-price')]",
       "targets": [
         ["css=.product-price > .bold:nth-child(1)", "css:finder"],
         ["xpath=//div[@id='app']/div[3]/div/div[2]/div[2]/div[3]/div[3]/div/div[2]/div/div/span", "xpath:idRelative"],
